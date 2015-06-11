@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://pjorg.com/fios-3-router-w-virtualized-vyos-7-define-internal-network/ -->
+<html lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>FiOS “Three-Router” with VyOS and ESXi, Part 7: Define Internal Network | Peter D. Jorgensen</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://pjorg.com/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://pjorg.com/wp-content/themes/twentythirteen/js/html5.js"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Peter D. Jorgensen » Feed" href="http://pjorg.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Peter D. Jorgensen » Comments Feed" href="http://pjorg.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Peter D. Jorgensen » FiOS “Three-Router” with VyOS and ESXi, Part 7: Define Internal Network Comments Feed" href="http://pjorg.com/fios-3-router-w-virtualized-vyos-7-define-internal-network/feed/">
+<link rel="stylesheet" id="wp-bigfoot-css" href="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/bigfoot-default.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentythirteen-fonts-css" href="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentythirteen-style-css" href="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentythirteen-ie-css'  href='http://pjorg.com/wp-content/themes/twentythirteen/css/ie.css?ver=2013-07-18' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/jquery.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://pjorg.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://pjorg.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="FiOS “Three-Router” with VyOS and ESXi, Part 6: Firewall" href="http://pjorg.com/fios-3-router-w-virtualized-vyos-6-firewall/">
+<link rel="next" title="FiOS “Three-Router” with VyOS and ESXi, Part 8: Network Address Translation" href="http://pjorg.com/fios-3-router-w-virtualized-vyos-8-nat/">
+<meta name="generator" content="WordPress 4.1">
+<link rel="canonical" href="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen.html">
+<link rel="shortlink" href="http://pjorg.com/?p=33">
+	<style type="text/css" id="twentythirteen-header-css">
+			.site-header {
+			background: url(http://www2.pjorg.com/wp-content/themes/twentythirteen/images/headers/star.png) no-repeat scroll top;
+			background-size: 1600px auto;
+		}
+		@media (max-width: 767px) {
+			.site-header {
+				background-size: 768px auto;
+			}
+		}
+		@media (max-width: 359px) {
+			.site-header {
+				background-size: 360px auto;
+			}
+		}
+		</style>
+	</head>
+
+<body class="single single-post postid-33 single-format-standard single-author no-avatars">
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header" role="banner">
+			<a class="home-link" href="http://pjorg.com/" title="Peter D. Jorgensen" rel="home">
+				<h1 class="site-title">Peter D. Jorgensen</h1>
+				<h2 class="site-description"></h2>
+			</a>
+
+			<div id="navbar" class="navbar">
+				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+					<button class="menu-toggle">Menu</button>
+					<a class="screen-reader-text skip-link" href="http://pjorg.com/fios-3-router-w-virtualized-vyos-7-define-internal-network/#content" title="Skip to content">Skip to content</a>
+					<div class="nav-menu"><ul><li class="page_item page-item-109"><a href="http://pjorg.com/about/">About</a></li></ul></div>
+					<form role="search" method="get" class="search-form" action="http://pjorg.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>				</nav><!-- #site-navigation -->
+			</div><!-- #navbar -->
+		</header><!-- #masthead -->
+
+		<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+						
+				
+<article id="post-33" class="post-33 post type-post status-publish format-standard hentry category-technology category-verizon-fios tag-rfc-1918">
+	<header class="entry-header">
+		
+				<h1 class="entry-title">FiOS “Three-Router” with VyOS and ESXi, Part 7: Define Internal Network</h1>
+		
+		<div class="entry-meta">
+			<span class="date"><a href="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen.html" title="Permalink to FiOS “Three-Router” with VyOS and ESXi, Part 7: Define Internal Network" rel="bookmark"><time class="entry-date" datetime="2015-01-15T12:06:35+00:00">January 15, 2015</time></a></span><span class="categories-links"><a href="http://pjorg.com/category/technology/" rel="category tag">Technology</a>, <a href="http://pjorg.com/category/technology/verizon-fios/" rel="category tag">Verizon FiOS</a></span><span class="tags-links"><a href="http://pjorg.com/tag/rfc-1918/" rel="tag">RFC 1918</a></span><span class="author vcard"><a class="url fn n" href="http://pjorg.com/author/pjorg/" title="View all posts by pjorg" rel="author">pjorg</a></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+		<div class="entry-content">
+		<p>Now that our primary router is communicating with the outside world, and we have some reasonable security in place with our firewall, we can set up our private internal network.<span id="more-33"></span></p>
+<p>Recall that our design is such that the primary router will access the&nbsp;<strong>Home&nbsp;Network</strong>&nbsp;(VLAN 1 on our switch and untagged elsewhere) via its second vNIC, which is assigned to the&nbsp;<strong>Home&nbsp;Network</strong>&nbsp;port group on the ESXi virtual switch. This vNIC will show up as&nbsp;<samp>eth1</samp>&nbsp;inside the Vyatta VM.</p>
+<pre>vyos@primary-router:~# run show interfaces
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface        IP Address                        S/L  Description
+---------        ----------                        ---  -----------
+eth0             108.0.0.123/24                    u/u  FiOS Public Internet 
+eth1             10.0.0.1/24                       u/u  Home Network 
+lo               127.0.0.1/8                       u/u  
+                 ::1/128
+</pre>
+<p>To get started, we need to pick an IP address block for this network. Any&nbsp;<a href="http://en.wikipedia.org/wiki/Private_network#Private_IPv4_address_spaces">private IP space</a>&nbsp;other than&nbsp;<samp>192.168.1.0/24</samp>&nbsp;will work (we don’t want confusion between this network and the network behind the Verizon hardware router that the set-top boxes will sit on, which will come into play later).</p>
+<p>Let’s use&nbsp;<samp>10.0.0.0/24</samp>. We’ll have the router listen on the&nbsp;<samp>.1</samp>&nbsp;address, auto negotiate speed and duplex, and apply the&nbsp;<samp>LAN‑TO‑LAN</samp>&nbsp;firewall rule set to traffic arriving on that interface. Remember that we configured the&nbsp;<samp>LAN‑TO‑LAN</samp>&nbsp;rule set to allow all traffic by default.</p>
+<pre>vyos@primary-router:~# set interfaces ethernet eth1 address 10.0.0.1/24
+vyos@primary-router:~# set interfaces ethernet eth1 description Home-Network
+vyos@primary-router:~# set interfaces ethernet eth1 duplex auto
+vyos@primary-router:~# set interfaces ethernet eth1 speed auto
+vyos@primary-router:~# set interfaces ethernet eth1 firewall in name LAN-TO-LAN
+vyos@primary-router:~# compare
+</pre>
+<p>Review your configurations, and then commit and save them.</p>
+<pre>vyos@primary-router:~# commit
+vyos@primary-router:~# save
+</pre>
+<p>If we want hosts on this network to dynamically receive addresses when they appear on the network, then we need to set up a&nbsp;<abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>&nbsp;server as well.</p>
+<p>We’ll configure DHCP on this network to assign addresses between&nbsp;<samp>10.0.0.100</samp>&nbsp;and&nbsp;<samp>10.0.0.199</samp>, with the default gateway and DNS both set to&nbsp;<samp>10.0.0.1</samp>&nbsp;(our primary router). We’re going to set the domain name for these hosts to&nbsp;<samp>home.local</samp>&nbsp;although you can use anything you’d like.</p>
+<pre>vyos@primary-router:~# set service dhcp-server disabled false
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool authoritative enable
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool subnet 10.0.0.0/24
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool subnet 10.0.0.0/24 default-router 10.0.0.1
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool subnet 10.0.0.0/24 dns-server 10.0.0.1
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool subnet 10.0.0.0/24 domain-name home.local
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool subnet 10.0.0.0/24 lease 86400
+vyos@primary-router:~# set service dhcp-server shared-network-name HomeNetworkPool subnet 10.0.0.0/24 start 10.0.0.100 stop 10.0.0.199
+</pre>
+<p>Since we’re directing our DHCP clients to send their DNS requests to the router (<samp>10.0.0.1</samp>), we need to also set up a DNS server to listen for those requests and forward them on to an external DNS provider. You can use any DNS server you’d like;&nbsp;<samp>8.8.8.8</samp>&nbsp;is&nbsp;<a href="https://developers.google.com/speed/public-dns/">Google’s public DNS service</a>. Also note that we’re going to cache up to 2000 lookups locally (for faster response later) and listen for DNS requests on&nbsp;<samp>eth1</samp>.</p>
+<pre>vyos@primary-router:~# set service dns forwarding cache-size 2000
+vyos@primary-router:~# set service dns forwarding listen-on eth1
+vyos@primary-router:~# set service dns name-server 8.8.8.8
+</pre>
+<p>Let’s review our changes…</p>
+<pre>vyatta@primary-router:~# compare
+</pre>
+<p>When you’re satisfied, commit and save.</p>
+<pre>vyatta@primary-router:~# commit
+vyatta@primary-router:~# save
+</pre>
+<p>If you have your switch configured with extra access ports on VLAN 1, you can plug a test system into one of those ports. Your test system should receive a DHCP address in the&nbsp;<samp>10.0.0.100–199</samp>&nbsp;range. You should be able to ping the gateway (<samp>10.0.0.1</samp>), but no Internet access yet.</p>
+	</div><!-- .entry-content -->
+	
+	<footer class="entry-meta">
+		
+			</footer><!-- .entry-meta -->
+</article><!-- #post -->
+					<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+
+			<a href="http://pjorg.com/fios-3-router-w-virtualized-vyos-6-firewall/" rel="prev"><span class="meta-nav">←</span> FiOS “Three-Router” with VyOS and ESXi, Part 6: Firewall</a>			<a href="http://pjorg.com/fios-3-router-w-virtualized-vyos-8-nat/" rel="next">FiOS “Three-Router” with VyOS and ESXi, Part 8: Network Address Translation <span class="meta-nav">→</span></a>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+					
+<div id="comments" class="comments-area">
+
+	
+									<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://pjorg.com/fios-3-router-w-virtualized-vyos-7-define-internal-network/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://pjorg.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+																			<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-describedby="form-allowed-tags" aria-required="true"></textarea></p>						<p class="form-allowed-tags" id="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="33" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+											</form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+		</div><!-- #main -->
+		<footer id="colophon" class="site-footer" role="contentinfo">
+				<div id="secondary" class="sidebar-container" role="complementary">
+		<div class="widget-area masonry" style="position: relative; height: 184px;">
+			<aside id="nav_menu-3" class="widget widget_nav_menu masonry-brick" style="position: absolute; left: 0px; top: 0px;"><h3 class="widget-title">Contact Me</h3><div class="menu-contact-methods-container"><ul id="menu-contact-methods" class="menu"><li id="menu-item-111" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-111"><a href="mailto:pdjorgensen@gmail.com">Email</a></li>
+<li id="menu-item-112" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-112"><a href="http://www.linkedin.com/in/peterdjorgensen/">LinkedIn</a></li>
+</ul></div></aside><aside id="archives-2" class="widget widget_archive masonry-brick" style="position: absolute; left: 265px; top: 0px;"><h3 class="widget-title">Archives</h3>		<ul>
+	<li><a href="http://pjorg.com/2015/01/">January 2015</a></li>
+		</ul>
+</aside><aside id="text-3" class="widget widget_text masonry-brick" style="position: absolute; left: 530px; top: 0px;">			<div class="textwidget"><a href="http://pjorg.com/vcap5-dca"><img src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/vcap-dca.png" style="max-height:120px;" alt="VMware Certified Advanced Professional - Data Center Administration"></a></div>
+		</aside><aside id="text-4" class="widget widget_text masonry-brick" style="position: absolute; left: 795px; top: 0px;">			<div class="textwidget"><a href="http://pjorg.com/vcap5-dcd"><img src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/vcap-dcd.png" style="max-height:120px;" alt="VMware Certified Advanced Professional - Data Center Design"></a></div>
+		</aside>		</div><!-- .widget-area -->
+	</div><!-- #secondary -->
+
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+	<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/bigfoot.min.js"></script>
+<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/wp-bigfoot.js"></script>
+<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/masonry.min.js"></script>
+<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="./FiOS “Three-Router” with VyOS and ESXi, Part 7_ Define Internal Network _ Peter D. Jorgensen_files/functions.js"></script>
+
+
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+ Served from: pjorg.com @ 2015-05-26 17:35:07 by W3 Total Cache --></body></html>

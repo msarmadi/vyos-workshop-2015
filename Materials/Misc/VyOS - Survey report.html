@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://blog.vyos.net/post/90140411083/survey-report -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" style="position: relative; -webkit-transition: right 0.25s ease-in-out; transition: right 0.25s ease-in-out; right: 0px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./VyOS - Survey report_files/rapid-3.18.1.js"></script><script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="./VyOS - Survey report_files/pre_tumblelog.js"></script><style type="text/css"></style>
+
+
+
+	
+	<meta name="viewport" content="width=720, user-scalable=yes">
+	<meta name="description" content="Survey report The survey is now closed and it’s time to summarize the results. The overall picture didn’t change much from the first days, so I think these data is pretty representative. [[MORE]]...">
+	<title>VyOS - Survey report</title>
+	
+	<!-- DEFAULT COLORS -->
+	<meta name="color:Background" content="#ffffff">
+	<meta name="color:Text" content="#333333">
+	<meta name="color:Secondary Text" content="#777777">
+	<meta name="color:Tertiary Text" content="#cccccc">
+	<meta name="color:Links" content="#c00906">
+	<meta name="color:Header Background" content="#444444">
+	<meta name="color:Title" content="#ffffff">
+	<meta name="color:Description" content="#999999">
+	<meta name="color:Post Headers" content="#111111">
+	<meta name="color:Big Quote" content="#e0e0e0">
+	<meta name="color:Photo Border" content="#dddddd">
+	
+	<!-- Disqus Shortname -->
+	<meta name="text:Disqus Shortname" content="">
+	<meta name="image:Background" content="">
+	
+	<style type="text/css">figure {margin: 0;}</style>
+<link rel="shortcut icon" href="http://33.media.tumblr.com/avatar_2289da2aa8e3_128.png">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://blog.vyos.net/rss">
+	<link rel="apple-touch-icon" href="http://33.media.tumblr.com/avatar_2289da2aa8e3_128.png">
+	
+	<style type="text/css" media="screen">	
+		/*--[ GLOBAL TAG STYLES ]---------*/
+		html { font-size: 100.01%; }
+		body { background: #ffffff url('http://assets.tumblr.com/images/x.gif?v=1') top left repeat; color: #333333; font: normal 1em/1.5 Georgia, serif; margin: 0; }
+		
+		:focus { outline: none; }
+		a:link, a:visited, a:active { color: #c00906; text-decoration: none; }
+		a:hover, a:focus { color: #333333; }
+		a img { border: 0; }
+		h1, h2, h3, h4, h5, h6 { color: #111111; font-weight: normal; margin: 0; padding: 0; }
+		p { margin: 0 0 1.5em; }
+		ul, ol { margin: 0 0 1.5em; padding: 0; }
+		blockquote { border-left: 2px solid #777777; color: #777777; margin: 0 1em 1.5em; padding: 0 1em; }
+		blockquote ul, blockquote ol { margin-left: 2em; }
+		
+		/*--[ HEADER ]--------------------*/
+		#header { background: #444444; padding: 1.5em 0; margin: 0 0 3em; position: relative; }
+		#inner-header { margin: 0 auto; width: 32em; }
+		#inner-header h1 { font-size: 3em; line-height: 1; }
+		#inner-header h1 a { color: #ffffff; text-decoration: none; }
+		#inner-header h1 a:hover { color: #999999; }
+		#inner-header h2 { color: #999999; font-size: 1.1em; line-height: 1.363634; }
+		
+		#header-shadow { display: block; background: transparent url(http://static.tumblr.com/eth9fj1/SITklre6t/header-shadow.png) repeat-x top; height: 24px; position: absolute; bottom: -24px; width: 100%; }
+		
+		
+		/*--[ POSTS ]---------------------*/
+		#posts { margin: 4.5em auto 0; width: 32em; }
+		#posts .post { margin-bottom: 2.25em; padding-bottom: 2.25em; position: relative; }
+		
+		/* DAY PAGE BLURB, TAG PAGE BLURB, SEARCH RESULT BLURB */
+		#daypageblurb,
+		#tagpageblurb,
+		#searchresultblurb { color: #777777; font-size: 1.25em; font-style: italic; line-height: 1.2em; margin-bottom: 2.4em; }
+		
+		/* DATE */
+		.date { border-top: 2px solid #cccccc; position: absolute; left: -6em; text-align: center; width: 4em;}
+		.date .permalink { font-size: 1.2em; font-variant: small-caps; line-height: 1.25; text-decoration: none; text-transform: lowercase; }
+		.date .day, .date .month { display: block; }
+		.date .month { font-size: 1.3em; line-height: 1.15384615385;}
+		
+		/* COMMON POST STYLES */
+		.post h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
+		.post .caption, .post .source { margin-top: 1.5em; }
+		
+		/* AUDIO */
+		.audio .player .play-count { color: #777777; float: right; font-size: 0.83333em; }
+		.audio .caption { clear: right; }
+		
+		/* CHATS */
+		.chat ul { list-style: none; margin: 0 0 1.5em; }
+		.chat ul li.odd { color: #777777; }
+		.chat ul li .who { background: #333333; color: #ffffff; padding: 0 0.25em; }
+		.chat ul li.odd .who { background: #777777; }
+		
+		/* PHOTOS */
+		.photo .image { position: relative; }
+		.photo .image img { border: 0.375em solid #dddddd; }
+		.photo .image .hi-res { background: #333; color: #fff; display: none; font-size: 0.75em; opacity: 0.9; padding: 0 0.5em; position: absolute; bottom: 1.5em; right: 1em; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
+		.photo .image:hover .hi-res { display: inline; }
+		
+		/* PHOTOSETS */
+		.photoset .set { border: 0.375em solid #dddddd; padding: 0; }
+		.photoset .set object, .photoset .set embed { display: block; }
+		
+		/* QUOTES */
+		.quote big { color: #e0e0e0; font-size: 6em; font-weight: bold; line-height: 0.5em; position: absolute; left: -0.15em; z-index: 1; }
+		.quote .quote-words { font-size: 1.3em; line-height: 1.15384615385; position: relative; z-index: 10; }
+		.quote .source { color: #777777; }
+		
+		/* REBLOG NOTES */
+		.reblogged { color: #777777; display:block; font-size: 0.833333em; font-style: italic; margin: 1.5em 0; text-align: right; }
+		
+		/* POST FOOTER */
+		.post-footer { border-top: 1px solid #cccccc; color: #777777; font-size: 0.75em; margin: 1.5em 0 0; padding: 0.5em 0 1em; text-align: right; }
+		.post-footer li { display: inline; margin-left: 1em; }
+		
+		/* NOTES */
+		#note-container h4 { font-size: 1.3em; line-height: 1.15384615385; margin-bottom: 1.15384615385em; }
+		#note-container .notes .note { border-bottom: 1px solid #aaa; margin: 0 0 0.75em; padding: 0 0 0.75em}
+		#note-container .notes .avatar { display: none; }
+		
+		
+		/*--[ PAGINATION ]----------------*/
+		#pagination { margin: 3em auto 1.5em; width: 32em; }
+		#pagination a { margin-right: 1.5em; }
+		
+		
+		/*--[ FOOTER ]--------------------*/
+		#footer { border-top: 1px solid #333333; margin: 3em auto 0; padding: 0.75em 0; width: 44em; }
+		#footer #search { float: right; }
+		#footer #search #keywords { border: 1px solid #777777; padding: 0.25em; }
+		#footer #meta-info { margin: 0; }
+		#footer #meta-info li { display: inline; font-size: 1.1em; margin-right: 1em; }
+		#footer #theme-info { clear: left; margin: 0.75em 0; }
+		#footer #theme-info li { color: #777777; display: inline; font-size: 0.75em; margin-right: 1em; }
+		
+		/*--[ CUSTOM CSS ]----------------*/
+		
+	</style>
+	
+<!--[if lt IE 7]>
+	<style type="text/css" media="screen">
+		#header { background-image: none; margin-bottom: 3em; }
+		#header-shadow { display: none; }
+	</style>
+<![endif]-->
+<link rel="alternate" href="android-app://com.tumblr/tumblr/x-callback-url/blog?blogName=vyos-dev%26postID=90140411083">
+<link rel="alternate" type="application/json+oembed" href="http://www.tumblr.com/oembed/1.0?url=http://blog.vyos.net/post/90140411083/survey-report" title="Survey report
+The survey is now closed and it’s time to summarize the results. The overall picture didn’t change much from the first days, so I think these data is pretty representative.
+[[MORE]] Platform popularity The most popular platforms are...">
+<script src="./VyOS - Survey report_files/tumblelog.js"></script><style type="text/css" id="tumblr_teaser_follow_css">
+#tumblr_teaser_follow {
+display: block;
+opacity: 1;
+visibility: hidden;
+position: fixed;
+bottom: 0px;
+right: 0px;
+width: 1px;
+height: 1px;
+z-index: 2147483647;
+}
+#tumblr_teaser_follow.open {
+visibility: visible;
+width: 310px;
+height: 106px;
+}
+</style><style type="text/css" id="tumblr_iframe_css">
+.tumblr_controls {
+position: absolute;
+top: 0px;
+right: 0px;
+display: block;
+opacity: 1;
+width: 1px;
+height: 1px;
+z-index: 2147483647;
+visibility: hidden;
+pointer-events: none;
+}
+.tumblr_controls.visible {
+visibility: visible;
+pointer-events: all;
+}
+.tumblr_controls.sticky {
+position: fixed;
+}
+.tumblr_controls.transition {
+-webkit-transition: top 0.1s ease;
+-moz-transition: top 0.1s ease;
+-ms-transition: top 0.1s ease;
+-o-transition: top 0.1s ease;
+transition: top 0.1s ease;
+}
+iframe#tumblr_controls.tumblr_controls.sticky.transition {
+-webkit-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+-moz-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+-ms-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+-o-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+top: 0 !important;
+}
+.tumblr_controls.sticky.transition {
+-webkit-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+-moz-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+-ms-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+-o-animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+animation: tumblr_controls_fade_in 0.3s 0.2s linear 1 both;
+top: 0 !important;
+}
+.tumblr_controls.flash_fix {
+visibility: hidden !important;
+}
+body.mobile_bar {
+-webkit-transition: padding-top 0.1s ease;
+-moz-transition: padding-top 0.1s ease;
+-ms-transition: padding-top 0.1s ease;
+-o-transition: padding-top 0.1s ease;
+transition: padding-top 0.1s ease;
+padding-top: 44px;
+}
+#tumblr_controls {
+width: 249px;
+height: 36px;
+}
+@-webkit-keyframes tumblr_controls_fade_in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+@-moz-keyframes tumblr_controls_fade_in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+@-ms-keyframes tumblr_controls_fade_in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+@-o-keyframes tumblr_controls_fade_in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+@keyframes tumblr_controls_fade_in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="./VyOS - Survey report_files/stylesheet.css">
+<meta http-equiv="x-dns-prefetch-control" content="off">
+<meta name="keywords" content="survey">
+
+<!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. --><!-- Read more: http://ogp.me/ --><meta property="fb:app_id" content="48119224995"><meta property="og:site_name" content=""><meta property="og:title" content="Survey report"><meta property="og:url" content="http://blog.vyos.net/post/90140411083/survey-report"><meta property="og:description" content="The survey is now closed and it’s time to summarize the results. The overall picture didn’t change much from the first days, so I think these data is pretty representative.
+[[MORE]] Platform..."><meta property="og:determiner" content="a"><meta property="og:type" content="tumblr-feed:entry"><meta property="og:image" content="https://31.media.tumblr.com/f393dee38196e60e58fa5521cc0cf769/tumblr_inline_n7vcqwLTCi1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/83e77605d20ccf5a5edf5a3adeaa0cdf/tumblr_inline_n7vcsrRHWm1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/0fb4df48bc4a7f458810f69accae39d9/tumblr_inline_n7vct6B5wQ1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/21b2ff62b64c7c37debbba2295704ca7/tumblr_inline_n7vctjpu7L1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/33023e68e367efa5af8d5272f985df3b/tumblr_inline_n7vctxFYHE1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/94b77ab0819769d5450a416217f58592/tumblr_inline_n7vcuabaOp1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/db26292e0877963659b98bc7b434b14c/tumblr_inline_n7vcuoM4hM1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/b5d4297b20d999378922c402d6937dc9/tumblr_inline_n7vcv1JG4o1qf2nrz.png"><meta property="og:image" content="https://31.media.tumblr.com/4f36499a8630e2dfa56c64d6b52e2320/tumblr_inline_n7vcvdvAv91qf2nrz.png"><meta property="al:ios:url" content="tumblr://x-callback-url/blog?blogName=vyos-dev&amp;postID=90140411083"><meta property="al:ios:app_name" content="Tumblr"><meta property="al:ios:app_store_id" content="305343404"><meta property="al:android:url" content="tumblr://x-callback-url/blog?blogName=vyos-dev&amp;postID=90140411083"><meta property="al:android:app_name" content="Tumblr"><meta property="al:android:package" content="com.tumblr"><!-- END TUMBLR FACEBOOK OPENGRAPH TAGS -->
+
+
+<!-- TWITTER TAGS --><meta charset="utf-8"><meta name="twitter:card" content="summary"><meta name="twitter:description" content="The survey is now closed and it&amp;rsquo;s time to summarize the results. The overall picture didn&amp;rsquo;t change much from the first days, so I think these data is pretty representative.
+[[MORE]]
+Platform popularity
+ The most popular platforms are x86-64 physical boxes, VMWare, KVM, and x86 boxes. x86-64 boxes constitute over one half of the installations. This is a bit surprising to me, I thought there are way more virtualized setups than physical ones. The conclusion I make from it: improving hardware support and features that only make sense on bare metal is worth it.
+Network type
+ Most of the installations are at home or small offices (35%), enterprise networks (30%). There are some service providers and very few telecoms. Adding features useful for offices and enterprise networks is a good idea then.
+ Maybe we should add more features useful for telecoms to gain popularity on that market?
+Network bandwidth
+ The majority of VyOS installations are at networks that have 100-1000 mbit/s bandwidth. Slower and faster networks have about equal share.
+Upgrade strategy
+ About one half of the users update every time new version is available. Only about 30% upgrade when only to fix bugs they hit. I expected more people to have a conservative upgrade strategy, it&amp;rsquo;s nice to see people want to upgrade.
+Alpha/beta versions
+ This one is interesting. About one half of the respondents are willing to install betas, while the other half are not. This is certainly enough to justify publishing betas though.
+Rolling release
+ Over 70% of people don&amp;rsquo;t want new features at cost of stability. That was pretty expectable, as of me.
+Release cycle
+ The majority of people are ok with release cycle about 6 months long.
+Feature importance
+ Few people want GUI, some people want RBAC, and most people agree remote API and live rollback are important.
+ This was a bit of a trick question: all those features require a new backend. So most people implicitly agree it has to be reworked.
+Popularity contest
+ Over 60% people agree to send usage data if they can configure what they send, and about 20% people agree to do that unconditionally. So adding this functionality certainly makes sense.
+Conclusions
+ Improving hardware support is a good idea, removing features only useful on physical machines is certainly a bad idea.
+ Improving support for features useful in corporate networks is a good idea.
+ Improving Xen support is probably not a priority. Or people don&amp;rsquo;t use it on Xen because Xen support is too bad? Let us now.
+ Six month release cycle is fine.
+ Alpha/beta versions are probably a good idea, rolling release builds are not.
+ Opt-in feature and hardware popularity contest is a good idea..
+"><meta name="twitter:title" content="Survey report"><meta name="twitter:url" content="http://blog.vyos.net/post/90140411083/survey-report"><meta name="twitter:site" content="tumblr"><meta name="twitter:creator" content="vyos_dev"><meta name="twitter:app:name:iphone" content="Tumblr"><meta name="twitter:app:name:ipad" content="Tumblr"><meta name="twitter:app:name:googleplay" content="Tumblr"><meta name="twitter:app:id:iphone" content="305343404"><meta name="twitter:app:id:ipad" content="305343404"><meta name="twitter:app:id:googleplay" content="com.tumblr"><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=vyos-dev&amp;postID=90140411083&amp;referrer=twitter-cards"><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=vyos-dev&amp;postID=90140411083&amp;referrer=twitter-cards"><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=vyos-dev&amp;postID=90140411083&amp;referrer=twitter-cards">
+
+</head>
+<body>
+	<div id="header">
+		<div id="inner-header">
+			<h1><a href="http://blog.vyos.net/">VyOS</a></h1>
+			<h2>An open source network OS based on Vyatta</h2>
+		</div>
+		
+		<div id="header-shadow"></div>
+	</div> <!-- end #header -->
+	
+	<div id="posts" class="autopagerize_page_element">
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="post">
+			
+			<div class="date">
+				<a href="http://blog.vyos.net/day/2014/06/28" class="permalink">
+					<span class="month">Jun</span>
+					<span class="day">28</span>
+				</a>
+			</div> <!-- end .date -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="text">				
+				<h3>Survey report</h3>
+				<div class="text-body">
+					<p>The survey is now closed and it’s time to summarize the results. The overall picture didn’t change much from the first days, so I think these data is pretty representative.</p>
+<!-- more -->
+<h3>Platform popularity</h3>
+<p>The most popular platforms are x86-64 physical boxes, VMWare, KVM, and x86 boxes. x86-64 boxes constitute over one half of the installations. This is a bit surprising to me, I thought there are way more virtualized setups than physical ones. The conclusion I make from it: improving hardware support and features that only make sense on bare metal is worth it.<img src="./VyOS - Survey report_files/tumblr_inline_n7vcqwLTCi1qf2nrz.png"></p>
+<h3>Network type</h3>
+<p>Most of the installations are at home or small offices (35%), enterprise networks (30%). There are some service providers and very few telecoms. Adding features useful for offices and enterprise networks is a good idea then.<img src="./VyOS - Survey report_files/tumblr_inline_n7vcsrRHWm1qf2nrz.png"></p>
+<p>Maybe we should add more features useful for telecoms to gain popularity on that market?</p>
+<h3>Network bandwidth
+</h3><p>The majority of VyOS installations are at networks that have 100-1000 mbit/s bandwidth. Slower and faster networks have about equal share.<img src="./VyOS - Survey report_files/tumblr_inline_n7vct6B5wQ1qf2nrz.png"></p>
+<h3>Upgrade strategy</h3>
+<p>About one half of the users update every time new version is available. Only about 30% upgrade when only to fix bugs they hit. I expected more people to have a conservative upgrade strategy, it’s nice to see people want to upgrade.<img src="./VyOS - Survey report_files/tumblr_inline_n7vctjpu7L1qf2nrz.png"></p>
+<h3>Alpha/beta versions</h3>
+<p>This one is interesting. About one half of the respondents are willing to install betas, while the other half are not. This is certainly enough to justify publishing betas though.<img src="./VyOS - Survey report_files/tumblr_inline_n7vctxFYHE1qf2nrz.png"></p>
+<h3>Rolling release</h3>
+<p>Over 70% of people don’t want new features at cost of stability. That was pretty expectable, as of me.<img src="./VyOS - Survey report_files/tumblr_inline_n7vcuabaOp1qf2nrz.png"></p>
+<h3>Release cycle</h3>
+<p>The majority of people are ok with release cycle about 6 months long.<img src="./VyOS - Survey report_files/tumblr_inline_n7vcuoM4hM1qf2nrz.png"></p>
+<h3>Feature importance</h3>
+<p>Few people want GUI, some people want RBAC, and most people agree remote API and live rollback are important.</p>
+<p>This was a bit of a trick question: all those features require a new backend. So most people implicitly agree it has to be reworked.<img src="./VyOS - Survey report_files/tumblr_inline_n7vcv1JG4o1qf2nrz.png"></p>
+<h3>Popularity contest</h3>
+<p>Over 60% people agree to send usage data if they can configure what they send, and about 20% people agree to do that unconditionally. So adding this functionality certainly makes sense.<img src="./VyOS - Survey report_files/tumblr_inline_n7vcvdvAv91qf2nrz.png"></p>
+<h3>Conclusions</h3>
+<ul><li>Improving hardware support is a good idea, removing features only useful on physical machines is certainly a bad idea.</li>
+<li>Improving support for features useful in corporate networks is a good idea.</li>
+<li>Improving Xen support is probably not a priority. Or people don’t use it on Xen because Xen support is too bad? Let us now.</li>
+<li>Six month release cycle is fine.</li>
+<li>Alpha/beta versions are probably a good idea, rolling release builds are not.</li>
+<li>Opt-in feature and hardware popularity contest is a good idea..</li>
+</ul>
+				</div>
+			</div> <!-- end .text -->
+			
+			
+			
+			
+			
+			
+			<ul class="post-footer">
+				
+				<li><a href="./VyOS - Survey report_files/VyOS - Survey report.html">Permalink</a></li>
+				<li><a href="http://blog.vyos.net/post/90140411083/survey-report#disqus_thread">1 Comment</a></li>
+				<li>Posted at 4:10 AM</li>
+				
+				<li>Tagged: <a href="http://blog.vyos.net/tagged/survey" class="tag">survey</a></li>
+				
+			</ul> <!-- end .post-footer -->
+		</div> <!-- end .post -->
+		
+		
+		
+		
+		
+    
+    <div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./VyOS - Survey report_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 948px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+    <script type="text/javascript" src="http://disqus.com/forums/vyosdevblog/embed.js"></script>
+    <noscript>&lt;a href="http://vyosdevblog.disqus.com/?url=ref"&gt;View the discussion thread&lt;/a&gt;</noscript>
+    
+    
+	</div> <!-- end #posts -->
+	
+	
+	
+	
+	<div id="pagination">
+		<a href="http://blog.vyos.net/post/90045253033">← Previous post</a>
+		<a href="http://blog.vyos.net/post/90146833768">Next post →</a>
+	</div>
+	
+	
+	
+	
+	<div id="footer">
+		<div id="search">
+			<form id="searchbox" form="" action="http://blog.vyos.net/search" method="get">
+	  		<input type="text" id="keywords" name="q" value="">
+	  		<input type="submit" id="submit" value="Search">
+	  	</form>
+		</div> <!-- end #search -->
+		
+		<ul id="meta-info">
+			
+			<li><a href="http://blog.vyos.net/archive">Archive</a></li>
+			<li><a href="http://blog.vyos.net/random">Random</a></li>
+			<li><a href="http://blog.vyos.net/mobile">Mobile</a></li>
+			<li><a href="http://blog.vyos.net/rss">RSS</a></li>
+			<li><a href="http://blog.vyos.net/ask">Ask me anything</a></li>
+			
+		</ul>
+		
+		<ul id="theme-info">
+			<li>Powered by <a href="http://www.tumblr.com/">Tumblr</a></li>
+			<li>ER2 theme by <a href="http://cubicle17.com/">Bill Israel</a></li>
+		</ul></div>
+	 <!-- end #footer -->
+	
+	
+	<!-- Disqus -->
+  <script type="text/javascript">
+  //<![CDATA[
+  (function() {
+      var links = document.getElementsByTagName('a');
+      var query = '?';
+      for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+          query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+      }
+      }
+      document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/vyosdevblog/get_num_replies.js' + query + '"></' + 'script>');
+  })();
+  //]]>
+  </script><script charset="utf-8" type="text/javascript" src="./VyOS - Survey report_files/get_num_replies.js"></script>
+  
+  <!-- BEGIN TUMBLR CODE --><iframe scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0; z-index:9999;" id="ga_target" src="./VyOS - Survey report_files/analytics.html"></iframe><script type="text/javascript">
+    (function(){
+        var analytics_frame = document.getElementById('ga_target');
+        var analytics_iframe_loaded;
+        var user_logged_in;
+        var blog_is_nsfw = 'No';
+        var addthis_enabled = false;
+
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        eventer(messageEvent,function(e) {
+            var message = (e.data && e.data.split) ? e.data.split(';') : '';
+            switch (message[0]) {
+                case 'analytics_iframe_loaded':
+                    analytics_iframe_loaded = true;
+                    postCSMessage();
+                    postGAMessage();
+                    postATMessage();
+                    break;
+                case 'user_logged_in':
+                    user_logged_in = message[1];
+                    postGAMessage();
+                    postATMessage();
+                    break;
+            }
+        }, false);
+
+        analytics_frame.src = "https://secure.assets.tumblr.com/analytics.html?f65f173ecd0610e1ad2f9930f8476598#" + 
+                              "http://blog.vyos.net";
+        function postGAMessage() {
+            if (analytics_iframe_loaded && user_logged_in) {
+                var is_ajax = false;
+                analytics_frame.contentWindow.postMessage(['tick_google_analytics', is_ajax, user_logged_in, blog_is_nsfw, '/post/90140411083/survey-report?route=%2Fpost%2F%3Aid%2F%3Asummary'].join(';'), analytics_frame.src.split('/analytics.html')[0]);
+            }
+        }
+        function postCSMessage() {
+            COMSCORE = true;
+            analytics_frame.contentWindow.postMessage('enable_comscore;' + window.location, analytics_frame.src.split('/analytics.html')[0]);
+        }
+        function postATMessage() {
+            if (addthis_enabled && analytics_iframe_loaded) {
+                analytics_frame.contentWindow.postMessage('enable_addthis', analytics_frame.src.split('/analytics.html')[0]);
+            }
+        }
+    })();
+</script><script type="text/javascript">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1432674065&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvYmxvZy52eW9zLm5ldFwvcG9zdFwvOTAxNDA0MTEwODNcL3N1cnZleS1yZXBvcnQiLCJyZXF0eXBlIjowLCJyb3V0ZSI6IlwvcG9zdFwvOmlkXC86c3VtbWFyeSJ9&U=JHGLJOHNEO&K=c75276c2cdc1f31b9e72e95540dcdda25664208f00cb0f2649d482e9b052b52f&R='.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript>&lt;img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1432674065&amp;J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvYmxvZy52eW9zLm5ldFwvcG9zdFwvOTAxNDA0MTEwODNcL3N1cnZleS1yZXBvcnQiLCJyZXF0eXBlIjowLCJyb3V0ZSI6IlwvcG9zdFwvOmlkXC86c3VtbWFyeSIsIm5vc2NyaXB0IjoxfQ==&amp;U=JHGLJOHNEO&amp;K=884abd486d32d3119605ebe389c87efe83dbae32a956ed8cf27c3316a3cb5aa5&amp;R="&gt;</noscript><script>
+        (function (w,d) {
+            'use strict';
+            var l = function(el, type, listener, useCapture) {
+                el.addEventListener ?
+                el.addEventListener(type, listener, !!useCapture) :
+                el.attachEvent && el.attachEvent('on' + type, listener, !!useCapture);
+            };
+            var a = function () {
+                                if (d.getElementById('tumblr-cdx')) {
+                    return;
+                }
+                var s = d.createElement('script');
+                var el = d.getElementsByTagName('script')[0];
+                s.async = true;
+                s.src = 'http://assets.tumblr.com/assets/scripts/vendor/cedexis/cedexis.radar.js?_v=52f4655fc08c33e92bbf84738fc9cc2c';
+                s.type = 'text/javascript';
+                s.id = 'tumblr-cdx';
+                d.body.appendChild(s);
+            };
+            l(w,'load',a);
+        }(window, document));
+</script><script type="text/javascript">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1432674065&J=eyJ0eXBlIjoicG9zdCIsInVybCI6Imh0dHA6XC9cL2Jsb2cudnlvcy5uZXRcL3Bvc3RcLzkwMTQwNDExMDgzXC9zdXJ2ZXktcmVwb3J0IiwicmVxdHlwZSI6MCwicm91dGUiOiJcL3Bvc3RcLzppZFwvOnN1bW1hcnkiLCJwb3N0cyI6W3sicG9zdGlkIjoiOTAxNDA0MTEwODMiLCJibG9naWQiOiIxNDEyNzg4MzMiLCJzb3VyY2UiOjMzfV19&U=KDBGNLBHON&K=69e15ecb772b14819a216890922bd38d28e7a0cb8c350847ddcd026ec2eb8bb8&R='.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript>&lt;img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1432674065&amp;J=eyJ0eXBlIjoicG9zdCIsInVybCI6Imh0dHA6XC9cL2Jsb2cudnlvcy5uZXRcL3Bvc3RcLzkwMTQwNDExMDgzXC9zdXJ2ZXktcmVwb3J0IiwicmVxdHlwZSI6MCwicm91dGUiOiJcL3Bvc3RcLzppZFwvOnN1bW1hcnkiLCJwb3N0cyI6W3sicG9zdGlkIjoiOTAxNDA0MTEwODMiLCJibG9naWQiOiIxNDEyNzg4MzMiLCJzb3VyY2UiOjMzfV0sIm5vc2NyaXB0IjoxfQ==&amp;U=KDBGNLBHON&amp;K=e6afd5782ce8ef3ff41f69dc2205b7aa55db601d0e0861a79baa934c5518b629&amp;R="&gt;</noscript><script>
+                    (function() {
+                        var s = document.createElement('script');
+                        var el = document.getElementsByTagName('script')[0];
+                        s.src = ('https:' == document.location.protocol ? 'https://s' : 'http://l') + '.yimg.com/ss/rapid-3.18.1.js';
+                        s.onload = function(){
+                            var YAHOO = window.YAHOO;
+                            if (YAHOO) {
+                                var keys = {
+                                    pd:'/post/:id/:summary',
+                                    _li:0,
+                                    b_id:141278833,
+                                    i_rad:0,
+                                    i_strm:0,
+                                    test_id: 'OLD' // version bucket
+
+                                };
+                                var conf = {
+                                                                        spaceid:1197716038,
+                                    client_only:1,
+                                    yql_enabled:false,
+                                    keys:keys,
+                                    nol:1
+                                };
+                                YAHOO.rapid = new YAHOO.i13n.Rapid(conf);
+                            }
+                        };
+                        el.parentNode.insertBefore(s, el);
+                    })();
+                </script><script>
+        (function (w,d) {
+            'use strict';
+            var l = function(el, type, listener, useCapture) {
+                el.addEventListener ?
+                el.addEventListener(type, listener, !!useCapture) :
+                el.attachEvent && el.attachEvent('on' + type, listener, !!useCapture);
+            };
+            var a = function () {
+                                if (d.getElementById('tumblr-cdx')) {
+                    return;
+                }
+                var s = d.createElement('script');
+                var el = d.getElementsByTagName('script')[0];
+                s.async = true;
+                s.src = 'http://assets.tumblr.com/assets/scripts/vendor/cedexis/cedexis.radar.js?_v=52f4655fc08c33e92bbf84738fc9cc2c';
+                s.type = 'text/javascript';
+                s.id = 'tumblr-cdx';
+                d.body.appendChild(s);
+            };
+            l(w,'load',a);
+        }(window, document));
+</script><iframe id="tumblr_controls" class="tumblr_controls sticky visible" width="249" height="36" frameborder="0" scrolling="no" src="./VyOS - Survey report_files/o.html" style="display: none;"></iframe>
+<div id="teaser_iframe_container" style="display: block; opacity: 0; visibility: hidden; position: fixed; top: 0px; right: 0px; bottom: 0px; width: 1px; height: 100%; z-index: 2147483646; overflow: hidden; -webkit-transition: width 0.25s ease-in-out; transition: width 0.25s ease-in-out; background-color: rgba(0, 0, 0, 0.6);"><iframe scrolling="no" frameborder="0" src="./VyOS - Survey report_files/teaser.html" id="teaser_iframe" width="1" height="1" style="display: block; opacity: 1; visibility: visible; position: absolute; top: 0px; right: 0px; min-width: 100%; width: 360px; height: 100%;"></iframe></div><script type="text/javascript">
+    (function(Tumblr){
+        var follow_iframe_initialized = false;
+        if (Tumblr.FollowTeaser && Tumblr.PostMessageListener) {
+            // Don't do anything until the first initialize event
+            Tumblr.PostMessageListener.initialize(function(message, origin) {
+                if (follow_iframe_initialized || message.length < 2) return;
+
+                if (message[0] === 'follow_iframe' && message[1] === 'enable') {
+                    Tumblr.FollowTeaser.current_page = 1;
+                    Tumblr.FollowTeaser.infer_infinite_scroll = true;
+                    Tumblr.FollowTeaser.create_from_tumblr_controls("http:\/\/assets.tumblr.com\/assets\/html\/iframe\/follow.html?_v=db9596e1abe1723e9ab84faf3f91929b");
+                    Tumblr.FollowTeaser.scroll_listener(true);
+                    follow_iframe_initialized = true;
+                }
+            });
+        }
+    })(this.Tumblr || (this.Tumblr = {}));
+</script><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><!-- END TUMBLR CODE -->
+
+
+<iframe id="tumblr_teaser_follow" width="1" height="1" frameborder="0" scrolling="no" src="./VyOS - Survey report_files/follow.html" class=" open"></iframe><script async="" src="./VyOS - Survey report_files/cedexis.radar.js" type="text/javascript" id="tumblr-cdx"></script><div id="cdx"><script type="text/javascript" async="" src="./VyOS - Survey report_files/jsonp"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/providers.json"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(1)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(2)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(3)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(4)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/assetid.json"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(5)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(6)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(7)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/node_id.js"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(8)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(9)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(10)"></script><iframe src="./VyOS - Survey report_files/24min.html" style="display: none;"></iframe><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(11)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(12)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(13)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(14)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(15)"></script><iframe src="./VyOS - Survey report_files/359min.html" style="display: none;"></iframe><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(16)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(17)"></script><script type="text/javascript" async="" src="./VyOS - Survey report_files/0(18)"></script></div></body></html>

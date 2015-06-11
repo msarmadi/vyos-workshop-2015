@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://vyos.net/wiki/User_Guide -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>User Guide - VyOS</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+<link rel="shortcut icon" href="http://vyos.net/skins/common/images/vy_icon.png">
+<link rel="search" type="application/opensearchdescription+xml" href="http://vyos.net/opensearch_desc.php" title="VyOS (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://vyos.net/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="VyOS Atom feed" href="http://vyos.net/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="stylesheet" href="http://vyos.net/load.php?debug=false&lang=en&modules=ext.rtlcite%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&only=styles&skin=vector&*">
+<style>
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: vyos_mw:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: vyos_mw:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */
+#mw-panel.collapsible-nav .portal{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAMAAAA7MLYKAAAAS1BMVEXb29vy8vLv7+/c3NzZ2dni4uLr6+vt7e3s7Ozw8PDn5+fj4+Ph4eHd3d3f39/o6Ojl5eXp6enx8fHa2trg4ODq6urk5OTz8/PY2NjolWftAAAAO0lEQVR4XrXAhwGAMAgEQB5I71X3n9QpPHqAGZidt2e02G8yedciQkv1/YPqIpFSdzbp9tjGsd4xhwl8yuMKHhkJhm8AAAAASUVORK5CYII=) left top no-repeat;background:url(http://vyos.net/extensions/Vector/modules/images/portal-break.png?2013-09-03T18:56:40Z) left top no-repeat!ie;padding:0.25em 0 !important;margin:-11px 9px 10px 11px}#mw-panel.collapsible-nav .portal h3,#mw-panel.collapsible-nav .portal h5{color:#4D4D4D;font-weight:normal;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAD1BMVEX////d3d2ampqxsbF5eXmCtCYvAAAAAXRSTlMAQObYZgAAADBJREFUeF6dzNEJACAMA1HdINQJCp1Ebv+ZlLYLaD4f4cbnDNi6MAO8KCHJ+7X02j3mzgMQe93HcQAAAABJRU5ErkJggg==) left center no-repeat;background:url(http://vyos.net/extensions/Vector/modules/images/open.png?2013-09-03T18:56:40Z) left center no-repeat!ie;padding:4px 0 3px 1.5em;margin-bottom:0}#mw-panel.collapsible-nav .portal h3:hover,#mw-panel.collapsible-nav .portal h5:hover{cursor:pointer;text-decoration:none}#mw-panel.collapsible-nav .portal h3 a,#mw-panel.collapsible-nav .portal h5 a{color:#4D4D4D;text-decoration:none}#mw-panel.collapsible-nav .portal .body{background:none !important;padding-top:0;display:none}#mw-panel.collapsible-nav .portal .body ul li{padding:0.25em 0} #mw-panel.collapsible-nav .portal.first h3,#mw-panel.collapsible-nav .portal.first h5{display:none}#mw-panel.collapsible-nav .portal.first{background-image:none;margin-top:0} #mw-panel.collapsible-nav .portal.persistent .body{display:block}#mw-panel.collapsible-nav .portal.persistent h3,#mw-panel.collapsible-nav .portal.persistent h5{background:none !important;padding-left:0.7em;cursor:default}#mw-panel.collapsible-nav .portal.persistent .body{margin-left:0.5em} #mw-panel.collapsible-nav .portal.collapsed h3,#mw-panel.collapsible-nav .portal.collapsed h5{color:#0645AD;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAADFBMVEX///95eXnd3d2dnZ3aAo3QAAAAAXRSTlMAQObYZgAAADFJREFUeF5dyzEKACAMA0CXolNe2Id09Kl5igZahWY4AiGjZwmIuS9GEcJfY63Ix88Bol4EYP1O7JMAAAAASUVORK5CYII=) left center no-repeat;background:url(http://vyos.net/extensions/Vector/modules/images/closed-ltr.png?2013-09-03T18:56:40Z) left center no-repeat!ie;margin-bottom:0}#mw-panel.collapsible-nav .portal.collapsed h3 a,#mw-panel.collapsible-nav .portal.collapsed h5 a{color:#0645AD}#mw-panel.collapsible-nav .portal.collapsed h3:hover,#mw-panel.collapsible-nav .portal.collapsed h5:hover{text-decoration:underline}
+/* cache key: vyos_mw:resourceloader:filter:minify-css:7:b48f722dc097caddbd01992fa8cd186c */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: vyos_mw:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: vyos_mw:resourceloader:filter:minify-css:7:b5da9b76614a9a4e088c7edac8e5ee8c */</style>
+
+<script src="./User Guide - VyOS_files/load.php"></script><style type="text/css"></style><script src="./User Guide - VyOS_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"User_Guide","wgTitle":"User Guide","wgCurRevisionId":743,"wgArticleId":61,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["User documentation"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"User_Guide","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"experiments":true}});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"vector-simplesearch":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: vyos_mw:resourceloader:filter:minify-js:7:17ccc48b3bb936994291139b86152d77 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script src="./User Guide - VyOS_files/load(2).php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/vector/csshover.min.htc")}</style><![endif]--><script async="" src="./User Guide - VyOS_files/load(3).php"></script><script async="" src="./User Guide - VyOS_files/load(4).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-User_Guide skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">User Guide</span></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">From VyOS</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="http://vyos.net/wiki/User_Guide#mw-navigation">navigation</a>, 					<a href="http://vyos.net/wiki/User_Guide#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="clear: right; margin-bottom: .5em; float: right; padding: .5em 0 .8em 1.4em; background: none; width: auto;"><table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="http://vyos.net/wiki/User_Guide#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://vyos.net/wiki/User_Guide#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://vyos.net/wiki/User_Guide#Installation"><span class="tocnumber">2</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://vyos.net/wiki/User_Guide#Using_the_Command-Line_Interface"><span class="tocnumber">3</span> <span class="toctext">Using the Command-Line Interface</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="http://vyos.net/wiki/User_Guide#Quick_Start_Guide"><span class="tocnumber">4</span> <span class="toctext">Quick Start Guide</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="http://vyos.net/wiki/User_Guide#Configuration"><span class="tocnumber">5</span> <span class="toctext">Configuration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="http://vyos.net/wiki/User_Guide#Network_Interfaces"><span class="tocnumber">5.1</span> <span class="toctext">Network Interfaces</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="http://vyos.net/wiki/User_Guide#Physical_Ethernet_Interfaces"><span class="tocnumber">5.1.1</span> <span class="toctext">Physical Ethernet Interfaces</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="http://vyos.net/wiki/User_Guide#802.1Q_VLAN_Interfaces"><span class="tocnumber">5.1.2</span> <span class="toctext">802.1Q VLAN Interfaces</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="http://vyos.net/wiki/User_Guide#Bridging"><span class="tocnumber">5.1.3</span> <span class="toctext">Bridging</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="http://vyos.net/wiki/User_Guide#Bonding"><span class="tocnumber">5.1.4</span> <span class="toctext">Bonding</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="http://vyos.net/wiki/User_Guide#Tunnel_Interfaces"><span class="tocnumber">5.1.5</span> <span class="toctext">Tunnel Interfaces</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="http://vyos.net/wiki/User_Guide#Routing"><span class="tocnumber">5.2</span> <span class="toctext">Routing</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="http://vyos.net/wiki/User_Guide#Static"><span class="tocnumber">5.2.1</span> <span class="toctext">Static</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="http://vyos.net/wiki/User_Guide#RIP"><span class="tocnumber">5.2.2</span> <span class="toctext">RIP</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="http://vyos.net/wiki/User_Guide#OSPF"><span class="tocnumber">5.2.3</span> <span class="toctext">OSPF</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="http://vyos.net/wiki/User_Guide#BGP"><span class="tocnumber">5.2.4</span> <span class="toctext">BGP</span></a>
+<ul>
+<li class="toclevel-4 tocsection-17"><a href="http://vyos.net/wiki/User_Guide#IPv4"><span class="tocnumber">5.2.4.1</span> <span class="toctext">IPv4</span></a></li>
+<li class="toclevel-4 tocsection-18"><a href="http://vyos.net/wiki/User_Guide#IPv6"><span class="tocnumber">5.2.4.2</span> <span class="toctext">IPv6</span></a></li>
+<li class="toclevel-4 tocsection-19"><a href="http://vyos.net/wiki/User_Guide#Route-map"><span class="tocnumber">5.2.4.3</span> <span class="toctext">Route-map</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-20"><a href="http://vyos.net/wiki/User_Guide#Route_Redistribution_and_Policy_Engine"><span class="tocnumber">5.2.5</span> <span class="toctext">Route Redistribution and Policy Engine</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="http://vyos.net/wiki/User_Guide#Firewall"><span class="tocnumber">5.3</span> <span class="toctext">Firewall</span></a>
+<ul>
+<li class="toclevel-3 tocsection-22"><a href="http://vyos.net/wiki/User_Guide#Groups"><span class="tocnumber">5.3.1</span> <span class="toctext">Groups</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="http://vyos.net/wiki/User_Guide#Rule-Sets"><span class="tocnumber">5.3.2</span> <span class="toctext">Rule-Sets</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="http://vyos.net/wiki/User_Guide#Applying_a_Rule-Set_to_an_Interface"><span class="tocnumber">5.3.3</span> <span class="toctext">Applying a Rule-Set to an Interface</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="http://vyos.net/wiki/User_Guide#Applying_a_Rule-Set_to_a_Zone"><span class="tocnumber">5.3.4</span> <span class="toctext">Applying a Rule-Set to a Zone</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="http://vyos.net/wiki/User_Guide#Zone-based_Firewall_Policy"><span class="tocnumber">5.3.5</span> <span class="toctext">Zone-based Firewall Policy</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-27"><a href="http://vyos.net/wiki/User_Guide#NAT"><span class="tocnumber">5.4</span> <span class="toctext">NAT</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="http://vyos.net/wiki/User_Guide#Source_NAT"><span class="tocnumber">5.4.1</span> <span class="toctext">Source NAT</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="http://vyos.net/wiki/User_Guide#Destination_NAT"><span class="tocnumber">5.4.2</span> <span class="toctext">Destination NAT</span></a></li>
+<li class="toclevel-3 tocsection-30"><a href="http://vyos.net/wiki/User_Guide#1-to-1_NAT"><span class="tocnumber">5.4.3</span> <span class="toctext">1-to-1 NAT</span></a>
+<ul>
+<li class="toclevel-4 tocsection-31"><a href="http://vyos.net/wiki/User_Guide#1-to-1_NAT_example"><span class="tocnumber">5.4.3.1</span> <span class="toctext">1-to-1 NAT example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-32"><a href="http://vyos.net/wiki/User_Guide#NPTv6_.28RFC6296.29"><span class="tocnumber">5.4.4</span> <span class="toctext">NPTv6 (RFC6296)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-33"><a href="http://vyos.net/wiki/User_Guide#VPN"><span class="tocnumber">5.5</span> <span class="toctext">VPN</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="http://vyos.net/wiki/User_Guide#Traffic_Policy"><span class="tocnumber">5.6</span> <span class="toctext">Traffic Policy</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="http://vyos.net/wiki/User_Guide#DHCP_Server"><span class="tocnumber">5.7</span> <span class="toctext">DHCP Server</span></a></li>
+<li class="toclevel-2 tocsection-36"><a href="http://vyos.net/wiki/User_Guide#DHCP_Relay"><span class="tocnumber">5.8</span> <span class="toctext">DHCP Relay</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="http://vyos.net/wiki/User_Guide#DNS_Forwarder"><span class="tocnumber">5.9</span> <span class="toctext">DNS Forwarder</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="http://vyos.net/wiki/User_Guide#Dynamic_DNS_Updater"><span class="tocnumber">5.10</span> <span class="toctext">Dynamic DNS Updater</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="http://vyos.net/wiki/User_Guide#System_Configuration"><span class="tocnumber">5.11</span> <span class="toctext">System Configuration</span></a>
+<ul>
+<li class="toclevel-3 tocsection-40"><a href="http://vyos.net/wiki/User_Guide#System_Users"><span class="tocnumber">5.11.1</span> <span class="toctext">System Users</span></a>
+<ul>
+<li class="toclevel-4 tocsection-41"><a href="http://vyos.net/wiki/User_Guide#Creating_Login_User_Accounts"><span class="tocnumber">5.11.1.1</span> <span class="toctext">Creating Login User Accounts</span></a></li>
+<li class="toclevel-4 tocsection-42"><a href="http://vyos.net/wiki/User_Guide#Configuring_for_SSH_Access_using_Shared_Public_Keys"><span class="tocnumber">5.11.1.2</span> <span class="toctext">Configuring for SSH Access using Shared Public Keys</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-43"><a href="http://vyos.net/wiki/User_Guide#System_Image_Management"><span class="tocnumber">6</span> <span class="toctext">System Image Management</span></a></li>
+</ul>
+</td></tr></tbody></table>
+</div> 
+<p>The VyOS User Guide is focused on providing a general overview of the installation, configuration, and operation of the VyOS network operating system.
+</p>
+<h2> <span class="mw-headline" id="Introduction"> Introduction </span></h2>
+<p>VyOS is a Linux-based network operating system that provides software-based network routing, firewall, and VPN functionality.  
+</p><p>The VyOS project was started in late 2013 as a community fork of the <a rel="nofollow" class="external text" href="http://en.wikipedia.org/wiki/GNU_General_Public_License">GPL</a> portions of Vyatta Core 6.6R1 with the goal of maintaining a free and open source network operating system in response to the decision to discontinue the community edition of Vyatta.  
+</p><p>VyOS is primarily based on <a rel="nofollow" class="external text" href="http://www.debian.org/">Debian GNU/Linux</a> and the <a rel="nofollow" class="external text" href="http://www.nongnu.org/quagga/">Quagga</a> routing engine.  Its configuration syntax and command-line interface are loosely derived from Juniper JUNOS as modeled by the <a rel="nofollow" class="external text" href="http://www.xorp.org/">XORP</a> project (which was the original routing engine Vyatta was based upon).  Vyatta changed to the Quagga routing engine for release 4.0.
+</p>
+<h2> <span class="mw-headline" id="Installation"> Installation </span></h2>
+<p>The latest ISO image for VyOS can be downloaded at <a rel="nofollow" class="external text" href="http://www.vyos.net/">www.vyos.net</a>.
+</p><p>The recommended system requirements are <b>512MB</b> RAM and <b>2GB</b> storage.
+</p><p>The VyOS ISO is a Live CD and will boot to a functional VyOS image.  To login to the system, use the default username:password of: <b>vyos:vyos</b>
+</p>
+<pre>Linux vyatta 3.3.8-1-amd64-vyatta #1 SMP Wed Oct 30 22:54:40 CET 2013 x86_64
+Welcome to VyOS.
+This system is open-source software. The exact distribution terms for 
+each module comprising the full system are described in the individual 
+files in /usr/share/doc/*/copyright.
+Last login: Wed Dec 11 17:33:09 2013
+vyos@vyos:~$ 
+</pre>
+<p>There are two installation options: <b>install image</b> and <b>install system</b>.  
+</p><p>The system install mirrors a traditional Linux installation and installs VyOS on the storage device selected.
+</p><p>The image install is the recommended installation method for VyOS.  Using the image-based install, each VyOS release is self-contained within a directory on the selected storage device.  Allowing multiple images to be installed on the same system, providing a predictable environment upon boot, and allowing for the quick rollback of an upgrade to a new release.
+</p><p>Typing either command will initiate the appropriate installer:
+</p>
+<pre>vyos@vyos:~$ <b>install image</b> 
+Welcome to the VyOS install program.  This script
+will walk you through the process of installing the
+VyOS image to a local hard drive.
+Would you like to continue? (Yes/No) [Yes]: <b>[return]</b>
+Probing drives: OK
+Looking for pre-existing RAID groups...none found.
+The VyOS image will require a minimum 1000MB root.
+Would you like me to try to partition a drive automatically
+or would you rather partition it manually with parted?  If
+you have already setup your partitions, you may skip this step
+
+Partition (Auto/Parted/Skip) [Auto]: <b>[return]</b> 
+
+I found the following drives on your system:
+ sda  2147MB
+
+
+Install the image on? [sda]: <b>[return]</b>
+
+This will destroy all data on /dev/sda.
+Continue? (Yes/No) [No]: <b>Yes</b>
+
+How big of a root partition should I create? (1000MB - 2147MB) [2147]MB: <b>[return]</b>
+
+Creating filesystem on /dev/sda1: OK
+Done!
+Mounting /dev/sda1...
+What would you like to name this image? [VyOS_999.hydrogen.11291501]: 
+OK.  This image will be named: VyOS_999.hydrogen.11291501
+Copying squashfs image...
+Copying kernel and initrd images...
+Done!
+I found the following configuration files:
+    /config/config.boot
+    /opt/vyatta/etc/config.boot.default
+Which one should I copy to sda? [/config/config.boot]: <b>[return]</b>
+
+Copying /config/config.boot to sda.
+Enter password for administrator account
+Enter password for user 'vyos': <b>&lt;removed&gt;</b>
+Retype password for user 'vyos': <b>&lt;removed&gt;</b>
+I need to install the GRUB boot loader.
+I found the following drives on your system:
+ sda  2147MB
+
+
+Which drive should GRUB modify the boot partition on? [sda]: <b>[return]</b>
+
+Setting up grub: OK
+Done!
+vyos@vyos:~$ 
+</pre>
+<p>After the installation is complete, remove the Live CD and reboot the system:
+</p>
+<pre>vyos@vyos:~$ <b>reboot</b> 
+Proceed with reboot? (Yes/No) [No] <b>Yes</b>
+vyos@vyos:~$
+</pre>
+<h2> <span class="mw-headline" id="Using_the_Command-Line_Interface"> Using the Command-Line Interface </span></h2>
+<p>The VyOS CLI is comprised of an <b>operational mode</b> and a <b>configuration mode</b>.
+</p><p>Operational mode allows for commands to perform operational system tasks and view system and service status, while configuration mode allows for the modification of system configuration.
+</p><p>The CLI provides a built-in help system.  In the CLI the <b>[?]</b> key may be used to display available commands.  The <b>[tab]</b> key can be used to auto-complete commands and will present the help system upon a conflict or unknown value.
+</p><p>For example typing <b>sh</b> followed by the <b>[tab]</b> key will complete to <b>show</b>.  Pressing <b>[tab]</b> a second time will display the possible sub-commands of the show command.
+</p>
+<pre>vyos@vyos:~$ <b>s[tab]</b>
+set   show  
+vyos@vyos:~$
+</pre>
+<p>Example showing possible show commands:
+</p>
+<pre>vyos@vyos:~$ <b>show [tab]</b>
+Possible completions:
+  arp           Show Address Resolution Protocol (ARP) information
+  bridge        Show bridging information
+  cluster       Show clustering information
+  configuration Show running configuration
+  conntrack     Show conntrack entries in the conntrack table 
+  conntrack-sync
+                Show connection syncing information
+  date          Show system date and time
+  dhcp          Show Dynamic Host Configuration Protocol (DHCP) information
+  dhcpv6        Show status related to DHCPv6
+  disk          Show status of disk device
+  dns           Show Domain Name Server (DNS) information
+  file          Show files for a particular image
+  firewall      Show firewall information
+  flow-accounting
+                Show flow accounting statistics
+  hardware      Show system hardware details
+  history       show command history
+  host          Show host information
+  incoming      Show ethernet input-policy information
+: <b>q</b>
+vyos@vyos:~$
+</pre>
+<p>When the output of a command results in more lines than can be displayed on the terminal screen the output is paginated as indicated by a <b>:</b> prompt.
+</p><p>When viewing in page mode the following commands are available:
+</p>
+<ul><li> <b>[q]</b> key can be used to cancel output
+</li><li> <b>[space]</b> will scroll down one page
+</li><li> <b>[b]</b> will scroll back one page
+</li><li> <b>[return]</b> will scroll down one line
+</li><li> <b>[up-arrow]</b> and <b>[down-arrow]</b> will scroll up or down one line at a time respectively
+</li><li> <b>[left-arrow]</b> and <b>[right-arrow]</b> can be used to scroll left or right in the event that the output has lines which exceed the terminal size.
+</li></ul>
+<p>To enter configuration mode use the <b>configure</b> command:
+</p>
+<pre>vyos@vyos:~$ <b>configure</b>
+[edit]
+vyos@vyos:~#
+</pre>
+<p>Note that the prompt changes from <b>$</b> to <b>#</b>.  To exit configuration mode, type <b>exit</b>.
+</p>
+<pre>vyos@vyos:~# <b>exit</b>
+exit
+vyos@vyos:~$
+</pre>
+<p>See the configuration section of this document for more information on configuration mode.
+</p>
+<h2> <span class="mw-headline" id="Quick_Start_Guide"> Quick Start Guide </span></h2>
+<p>Below is a very basic configuration example that will provide a NAT gateway for a device with two interfaces.
+</p><p>Enter configuration mode:
+</p>
+<pre>vyos@vyos$ <b>configure</b>
+vyos@vyos#
+</pre>
+<p>Configure network interfaces:
+</p>
+<pre><b>set interfaces ethernet eth0 address dhcp</b>
+<b>set interfaces ethernet eth0 description 'OUTSIDE'</b>
+
+<b>set interfaces ethernet eth1 address '192.168.0.1/24'</b>
+<b>set interfaces ethernet eth1 description 'INSIDE'</b>
+</pre>
+<p>Enable SSH for remote management:
+</p>
+<pre><b>set service ssh port '22'</b>
+</pre>
+<p>Configure Source NAT for our "Inside" network.
+</p>
+<pre><b>set nat source rule 100 outbound-interface 'eth0'</b>
+<b>set nat source rule 100 source address '192.168.0.0/24'</b>
+<b>set nat source rule 100 translation address masquerade</b>
+</pre>
+<p>Configure a DHCP Server:
+</p>
+<pre><b>set service dhcp-server disabled 'false'</b>
+<b>set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 default-router '192.168.0.1'</b>
+<b>set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 dns-server '192.168.0.1'</b>
+<b>set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 domain-name 'internal-network'</b>
+<b>set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 lease '86400'</b>
+<b>set service dhcp-server shared-network-name LAN subnet 192.168.0.0/24 start 192.168.0.9 stop '192.168.0.254'</b>
+</pre>
+<p>And a DNS forwarder:
+</p>
+<pre><b>set service dns forwarding cache-size '0'</b>
+<b>set service dns forwarding listen-on 'eth1'</b>
+<b>set service dns forwarding name-server '8.8.8.8'</b>
+<b>set service dns forwarding name-server '8.8.4.4'</b>
+</pre>
+<p>Add a set of firewall policies for our "Outside" interface:
+</p>
+<pre><b>set firewall name OUTSIDE-IN default-action 'drop'</b>
+<b>set firewall name OUTSIDE-IN rule 10 action 'accept'</b>
+<b>set firewall name OUTSIDE-IN rule 10 state established 'enable'</b>
+<b>set firewall name OUTSIDE-IN rule 10 state related 'enable'</b>
+
+<b>set firewall name OUTSIDE-LOCAL default-action 'drop'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 10 action 'accept'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 10 state established 'enable'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 10 state related 'enable'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 20 action 'accept'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 20 icmp type-name 'echo-request'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 20 protocol 'icmp'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 20 state new 'enable'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 30 action 'drop'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 30 destination port '22'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 30 protocol 'tcp'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 30 recent count '4'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 30 recent time '60'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 30 state new 'enable'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 31 action 'accept'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 31 destination port '22'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 31 protocol 'tcp'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 31 state new 'enable'</b>
+</pre>
+<p>Apply the firewall policies:
+</p>
+<pre><b>set interfaces ethernet eth0 firewall in name 'OUTSIDE-IN'</b>
+<b>set interfaces ethernet eth0 firewall local name 'OUTSIDE-LOCAL'</b>
+</pre>
+<p>Commit changes, save the configuration, and exit configuration mode:
+</p>
+<pre>vyos@vyos# <b>commit</b>
+vyos@vyos# <b>save</b>
+Saving configuration to '/config/config.boot'...
+Done
+vyos@vyos# <b>exit</b>
+vyos@vyos$
+</pre>
+<h2> <span class="mw-headline" id="Configuration"> Configuration </span></h2>
+<p>VyOS makes use of a unified configuration file for all system configuration: <b>config.boot</b>.  This allows for easy template creation, backup, and replication of system configuration.
+</p><p>The current configuration can be viewed using the <b>show configuration</b> command.
+</p>
+<pre>vyos@vyos:~$  <b>show configuration</b>
+interfaces {
+    ethernet eth0 {
+        address dhcp
+        hw-id 00:0c:29:44:3b:0f
+    }
+    loopback lo {
+    }
+}
+service {
+    ssh {
+        port 22
+    }
+}
+system {
+    config-management {
+        commit-revisions 20
+    }
+    console {
+        device ttyS0 {
+            speed 9600
+        }
+    }
+    login {
+        user vyos {
+            authentication {
+                encrypted-password ****************
+            }
+            level admin
+        }
+    }
+    ntp {
+        server 0.pool.ntp.org {
+        }
+        server 1.pool.ntp.org {
+        }
+        server 2.pool.ntp.org {
+        }
+    }
+    package {
+        repository community {
+            components main
+            distribution hydrogen
+            url <a rel="nofollow" class="external free" href="http://packages.vyos.net/vyos">http://packages.vyos.net/vyos</a>
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level notice
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+}
+vyos@vyos:~$ 
+</pre>
+<p>Because configuration changes are made using <b>set</b> and <b>delete</b> commands, the commands to generate the active configuration can also be displayed using the <b>show configuration commands</b> command.
+</p>
+<pre>vyos@vyos:~$ <b>show configuration commands</b> 
+set interfaces ethernet eth0 address 'dhcp'
+set interfaces ethernet eth0 hw-id '00:0c:29:44:3b:0f'
+set interfaces loopback 'lo'
+set service ssh port '22'
+set system config-management commit-revisions '20'
+set system console device ttyS0 speed '9600'
+set system login user vyos authentication encrypted-password '<b>&lt;removed&gt;'</b>
+set system login user vyos level 'admin'
+set system ntp server '0.pool.ntp.org'
+set system ntp server '1.pool.ntp.org'
+set system ntp server '2.pool.ntp.org'
+set system package repository community components 'main'
+set system package repository community distribution 'stable'
+set system package repository community url '<a rel="nofollow" class="external free" href="http://packages.vyos.net/vyos'">http://packages.vyos.net/vyos'</a>
+set system syslog global facility all level 'notice'
+set system syslog global facility protocols level 'debug'
+vyos@vyos:~$ 
+</pre>
+<p>Configuration changes made do not take effect until committed using the <b>commit</b> command in configuration mode.
+</p>
+<pre>vyos@vyos# <b>commit</b>
+[edit]
+vyos@vyos# <b>exit</b>
+Warning: configuration changes have not been saved.
+exit
+vyos@vyos:~$
+</pre>
+<p>In order to preserve configuration changes upon reboot, the configuration must also be saved once applied.  This is done using the <b>save</b> command in configuration mode.
+</p>
+<pre>vyos@vyos# <b>save</b>
+Saving configuration to '/config/config.boot'...
+Done
+[edit]
+vyos@vyos#
+</pre>
+<p>The <b>show</b> command within configuration mode will show the current configuration indicating line changes with a <b>+</b> for additions and a <b>-</b> for deletions.
+</p>
+<pre>vyos@vyos:~$ <b>configure</b>
+[edit]
+vyos@vyos# <b>show interfaces</b>     
+ ethernet eth0 {
+     address dhcp
+     hw-id 00:0c:29:44:3b:0f
+ }
+ loopback lo {
+ }
+[edit]
+vyos@vyos# <b>set interfaces ethernet eth0 description 'OUTSIDE'</b>
+[edit]
+vyos@vyos# show interfaces 
+ ethernet eth0 {
+     address dhcp
+<b>+</b>    description OUTSIDE
+     hw-id 00:0c:29:44:3b:0f
+ }
+ loopback lo {
+ }
+[edit]
+vyos@vyos#
+</pre>
+<p>Configuration mode can not be exited while uncommitted changes exist.  To exit configuration mode without applying changes, the <b>exit discard</b> command can be used.
+</p>
+<pre>vyos@vyos# <b>exit</b>  
+Cannot exit: configuration modified.
+Use 'exit discard' to discard the changes and exit.
+[edit]
+vyos@vyos# <b>exit discard</b>
+exit
+vyos@vyos:~$ 
+</pre>
+<p>VyOS also maintains backups of previous configurations.  To compare configuration revisions in configuration mode, use the <b>compare</b> command:
+</p>
+<pre>vyos@vyos# <b>compare [tab]</b> 
+Possible completions:
+  &lt;Enter&gt;	Compare working &amp; active configurations
+  saved		Compare working &amp; saved configurations
+  &lt;N&gt;		Compare working with revision N
+  &lt;N&gt; &lt;M&gt;	Compare revision N with M
+
+  Revisions:
+    0	2013-12-17 20:01:37 root by boot-config-loader
+    1	2013-12-13 15:59:31 root by boot-config-loader
+    2	2013-12-12 21:56:22 vyos by cli
+    3	2013-12-12 21:55:11 vyos by cli
+    4	2013-12-12 21:27:54 vyos by cli
+    5	2013-12-12 21:23:29 vyos by cli
+    6	2013-12-12 21:13:59 root by boot-config-loader
+    7	2013-12-12 16:25:19 vyos by cli
+    8	2013-12-12 15:44:36 vyos by cli
+    9	2013-12-12 15:42:07 root by boot-config-loader
+    10	2013-12-12 15:42:06 root by init
+
+      
+[edit]
+vyos@vyos#
+</pre>
+<p>You can rollback configuration using the <b>rollback</b> command, however this command will currently trigger a system reboot.
+</p>
+<pre>vyos@vyos# <b>compare 1</b>
+[edit system]
+&gt;host-name vyos-1
+[edit]
+vyos@vyos# <b>rollback 1</b>
+Proceed with reboot? [confirm][y]
+
+Broadcast message from root@vyos-1 (pts/0) (Tue Dec 17 21:07:45 2013):
+
+The system is going down for reboot NOW!
+[edit]
+vyos@vyos#
+</pre>
+<p><br>
+VyOS also supports saving and loading configuration remotely using SCP, FTP, or TFTP.
+</p>
+<pre>vyos@vyos# <b>save [tab]</b>
+Possible completions:
+  &lt;Enter&gt;       Save to system config file
+  &lt;file&gt;        Save to file on local machine
+  scp://&lt;user&gt;:&lt;passwd&gt;@&lt;host&gt;/&lt;file&gt; Save to file on remote machine
+  <a rel="nofollow" class="external free" href="ftp:">ftp://</a>&lt;user&gt;:&lt;passwd&gt;@&lt;host&gt;/&lt;file&gt; Save to file on remote machine
+  tftp://&lt;host&gt;/&lt;file&gt;      Save to file on remote machine
+</pre>
+<pre>vyos@vyos# <b>save tftp://192.168.0.100/vyos-test.config.boot</b>
+Saving configuration to 'tftp://192.168.0.100/vyos-test.config.boot'...
+######################################################################## 100.0%
+Done
+</pre>
+<p><br>
+</p>
+<h3> <span class="mw-headline" id="Network_Interfaces"> Network Interfaces </span></h3>
+<p>Configured interfaces on a VyOS system can be displayed using the <b>show interfaces</b> command.
+</p>
+<pre>vyos@vyos:~$ <b>show interfaces</b>             
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface        IP Address                        S/L  Description
+---------        ----------                        ---  -----------
+eth0             172.16.51.129/24                  u/u  OUTSIDE 
+eth1             192.168.0.1/24                    u/u  INSIDE 
+lo               127.0.0.1/8                       u/u  
+                &nbsp;::1/128
+vyos@vyos:~$ 
+</pre>
+<p>A specific interface can be shown using the <b>show interfaces &lt;type&gt; &lt;name&gt;</b> command.
+</p>
+<pre>vyos@vyos:~$ <b>show interfaces ethernet eth0</b>
+eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether 00:0c:29:44:3b:0f brd ff:ff:ff:ff:ff:ff
+    inet 172.16.51.129/24 brd 172.16.51.255 scope global eth0
+    inet6 fe80::20c:29ff:fe44:3b0f/64 scope link 
+       valid_lft forever preferred_lft forever
+    Description: OUTSIDE
+
+    RX:  bytes    packets     errors    dropped    overrun      mcast
+        274397       3064          0          0          0          0
+    TX:  bytes    packets     errors    dropped    carrier collisions
+        257276       1890          0          0          0          0
+vyos@vyos:~$
+</pre>
+<p>Each interface can be configured with a description and address.
+</p>
+<pre><b>set interfaces ethernet eth0 description 'OUTSIDE'</b>
+<b>set interfaces ethernet eth0 address 'dhcp'</b>
+</pre>
+<p>Different network interfaces provide type-specific configuration.  Ethernet interfaces, for example, allow the configuration of speed and duplex.
+</p><p>Many services, such as network routing, firewall, and traffic policy also maintain interface-specific configuration.  These will be covered in their respective sections.
+</p>
+<h4> <span class="mw-headline" id="Physical_Ethernet_Interfaces"> Physical Ethernet Interfaces </span></h4>
+<p>Ethernet interfaces allow for the configuration of speed, duplex, and hw-id (MAC address).  Below is an example configuration:
+</p>
+<pre><b>set interfaces ethernet eth1 address '192.168.0.1/24'</b>
+<b>set interfaces ethernet eth1 description 'INSIDE'</b>
+<b>set interfaces ethernet eth1 duplex 'auto'</b>
+<b>set interfaces ethernet eth1 speed 'auto'</b>
+</pre>
+<p>Resulting in:
+</p>
+<pre>   ethernet eth1 {
+       address 192.168.0.1/24
+       description INSIDE
+       duplex auto
+       hw-id 00:0c:29:44:3b:19
+       smp_affinity auto
+       speed auto
+   }
+</pre>
+<p>In addition, Ethernet interfaces provide the extended operational commands <b>show interfaces ethernet &lt;name&gt; physical</b> and <b>show interfaces ethernet &lt;name&gt; statistics</b>.  Statistics available are driver dependent.
+</p>
+<pre>vyos@vyos:~$ <b>show interfaces ethernet eth0 physical</b>
+Settings for eth0:
+        Supported ports: [ TP ]
+        Supported link modes:   10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Full 
+        Supports auto-negotiation: Yes
+        Advertised link modes:  10baseT/Half 10baseT/Full 
+                                100baseT/Half 100baseT/Full 
+                                1000baseT/Full 
+        Advertised pause frame use: No
+        Advertised auto-negotiation: Yes
+        Speed: 1000Mb/s
+        Duplex: Full
+        Port: Twisted Pair
+        PHYAD: 0
+        Transceiver: internal
+        Auto-negotiation: on
+        MDI-X: Unknown
+        Supports Wake-on: d
+        Wake-on: d
+        Current message level: 0x00000007 (7)
+        Link detected: yes
+driver: e1000
+version: 7.3.21-k8-NAPI
+firmware-version: 
+bus-info: 0000:02:01.0
+vyos@vyos:~$ 
+vyos@vyos:~$ <b>show interfaces ethernet eth0 statistics</b> 
+NIC statistics:
+     rx_packets: 3530
+     tx_packets: 2179
+[...] 
+</pre>
+<h4> <span class="mw-headline" id="802.1Q_VLAN_Interfaces"> 802.1Q VLAN Interfaces </span></h4>
+<p>802.1Q VLAN interfaces are represented as virtual sub-interfaces in VyOS.  The term used for this is <b>vif</b>.  Configuration of a tagged sub-interface is accomplished using the configuration command <b>set interfaces ethernet &lt;name&gt; vif &lt;vlan-id&gt;</b>.
+</p>
+<pre><b>set interfaces ethernet eth1 vif 100 description 'VLAN 100'</b>
+<b>set interfaces ethernet eth1 vif 100 address '192.168.100.1/24'</b>
+</pre>
+<p>Resulting:
+</p>
+<pre>   ethernet eth1 {
+       address 192.168.0.1/24
+       description INSIDE
+       duplex auto
+       hw-id 00:0c:29:44:3b:19
+       smp_affinity auto
+       speed auto
+       vif 100 {
+           address 192.168.100.1/24
+           description "VLAN 100"
+       }
+   }
+</pre>
+<p>VLAN interfaces are shown as &lt;name&gt;.&lt;vlan-id&gt;, e.g. eth1.100:
+</p>
+<pre>vyos@vyos:~$ <b>show interfaces</b>
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface        IP Address                        S/L  Description
+---------        ----------                        ---  -----------
+eth0             172.16.51.129/24                  u/u  OUTSIDE 
+eth1             192.168.0.1/24                    u/u  INSIDE 
+eth1.100         192.168.100.1/24                  u/u  VLAN 100 
+lo               127.0.0.1/8                       u/u  
+                &nbsp;::1/128
+vyos@vyos:~$
+</pre>
+<h4> <span class="mw-headline" id="Bridging"> Bridging </span></h4>
+<p>Interfaces in VyOS can be bridged together to provide software switching of Layer-2 traffic.
+</p><p>A bridge is created when a bridge interface is defined.  In the example below we will be creating a bridge for VLAN 100 and assigning a VIF to the bridge.
+</p>
+<pre><b>set interfaces bridge 'br100'</b>
+<b>set interfaces ethernet eth1 vif 100 bridge-group bridge br100</b>
+</pre>
+<p>Interfaces assigned to a bridge-group do not have address configuration.  An IP address can be assigned to the bridge interface itself, however, like any normal interface.
+</p>
+<pre><b>set interfaces bridge br100 address '192.168.100.1/24'</b>
+</pre>
+<p>Example Result:
+</p>
+<pre>   bridge br100 {
+       address 192.168.100.1/24
+   }
+[...]
+   ethernet eth1 {
+[...]
+       vif 100 {
+           bridge-group {
+               bridge br100
+           }
+       }
+   }
+</pre>
+<p>In addition to normal IP interface configuration, bridge interfaces support Spanning-Tree Protocol.  STP is disabled by default.
+</p><p><b>NOTE:</b> Please use caution when introducing spanning-tree protocol on a network as it may result in topology changes.
+</p><p>To enable spanning-tree use the <b>set interfaces bridge &lt;name&gt; stp true</b> command:
+</p>
+<pre><b>set interfaces bridge br100 stp true</b>
+</pre>
+<p>STP <b>priority</b>, <b>forwarding-delay</b>, <b>hello-time</b>, and <b>max-age</b> can be configured for the bridge-group.  The MAC aging time can also be configured using the <b>aging</b> directive.
+</p><p>For member interfaces, the bridge-group <b>priority</b> and <b>cost</b> can be configured.
+</p><p>The <b>show bridge</b> operational command can be used to display configured bridges:
+</p>
+<pre>vyos@vyos:~$ <b>show bridge</b> 
+bridge name     bridge id               STP enabled     interfaces
+br100           0000.000c29443b19       yes             eth1.100
+vyos@vyos:~$ 
+</pre>
+<p>If spanning-tree is enabled, the <b>show bridge &lt;name&gt; spanning-tree</b> command can be used to show STP configuration:
+</p>
+<pre>vyos@vyos:~$ <b>show bridge br100 spanning-tree</b> 
+br100
+ bridge id              0000.000c29443b19
+ designated root        0000.000c29443b19
+ root port                 0                    path cost                  0
+ max age                  20.00                 bridge max age            20.00
+ hello time                2.00                 bridge hello time          2.00
+ forward delay            15.00                 bridge forward delay      15.00
+ ageing time             300.00
+ hello timer               0.47                 tcn timer                  0.00
+ topology change timer     0.00                 gc timer                  64.63
+ flags                  
+
+eth1.100 (1)
+ port id                8001                    state                forwarding
+ designated root        0000.000c29443b19       path cost                  4
+ designated bridge      0000.000c29443b19       message age timer          0.00
+ designated port        8001                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.00
+ flags                  
+
+vyos@vyos:~$ 
+</pre>
+<p>The MAC address-table for a bridge can be displayed using the <b>show bridge &lt;name&gt; macs</b> command:
+</p>
+<pre>vyos@vyos:~$ <b>show bridge br100 macs</b>          
+port no mac addr                is local?       ageing timer
+  1     00:0c:29:44:3b:19       yes                0.00
+vyos@vyos:~$
+</pre>
+<h4> <span class="mw-headline" id="Bonding"> Bonding </span></h4>
+<p>You can combine (aggregate) 2 or more physical interfaces into a single logical one. It's called bonding, or LAG, or etherchannel, or portchannel.
+</p><p>Create interface bondX, where X is just a number:
+</p>
+<pre><b>set interfaces bonding bond0 description 'my-sw1 int 23 and 24'</b>
+</pre>
+<p>You are able to choose a hash policy:
+</p>
+<pre>vyos@vyos# <b>set interfaces bonding bond0 hash-policy</b>
+Possible completions:
+  layer2       use MAC addresses to generate the hash (802.3ad)
+  layer2+3     combine MAC address and IP address to make hash
+  layer3+4     combine IP address and port to make hash
+</pre>
+<p>For example:
+</p>
+<pre><b>set interfaces bonding bond0 hash-policy 'layer2'</b>
+</pre>
+<p>You may want to set IEEE 802.3ad Dynamic link aggregation (802.3ad) AKA LACP (don't forget to setup it on the other end of these links):
+</p>
+<pre><b>set interfaces bonding bond0 mode '802.3ad'</b>
+</pre>
+<p>or some other modes:
+</p>
+<pre>vyos@vyos# <b>set interfaces bonding bond0 mode</b>
+Possible completions:
+  802.3ad      IEEE 802.3ad Dynamic link aggregation (Default)
+  active-backup
+               Fault tolerant: only one slave in the bond is active
+  broadcast    Fault tolerant: transmits everything on all slave interfaces
+  round-robin  Load balance: transmit packets in sequential order
+  transmit-load-balance
+               Load balance: adapts based on transmit load and speed
+  adaptive-load-balance
+               Load balance: adapts based on transmit and receive plus ARP
+  xor-hash     Load balance: distribute based on MAC address
+</pre>
+<p>Now bond some physical interfaces into bond0:
+</p>
+<pre><b>set interfaces ethernet eth0 bond-group 'bond0'</b>
+<b>set interfaces ethernet eth0 description 'member of bond0'</b>
+<b>set interfaces ethernet eth1 bond-group 'bond0'</b>
+<b>set interfaces ethernet eth1 description 'member of bond0'</b>
+</pre>
+<p>After a commit you may treat bond0 as almost a physical interface (you can't change its` duplex, for example) and assign IPs or VIFs on it.
+</p><p>You may check the result:
+</p>
+<pre>vyos@vyos# <b>run sh interfaces bonding</b>
+Codes: S - State, L - Link, u - Up, D - Down, A - Admin Down
+Interface        IP Address                        S/L  Description
+---------        ----------                        ---  -----------
+bond0            -                                 u/u  my-sw1 int 23 and 24
+bond0.10         192.168.0.1/24                    u/u  office-net 
+bond0.100        10.10.10.1/24                     u/u  management-net
+</pre>
+<h4> <span class="mw-headline" id="Tunnel_Interfaces"> Tunnel Interfaces </span></h4>
+<p>Set Virtual Tunnel interface
+</p><p><b>set interfaces vti vti0 address 192.168.2.249/30</b>
+</p><p>vyos@vyos# <b>show interfaces vti</b>
+</p>
+<pre>vti vti0 {
+    address 192.168.2.249/30
+    description "Description"
+}
+</pre>
+<p>[edit]
+</p>
+<h3> <span class="mw-headline" id="Routing"> Routing </span></h3>
+<p>Routing is simple sending a packet from one network to another.  
+</p>
+<h4> <span class="mw-headline" id="Static"> Static </span></h4>
+<p>Static routes are manually configured network routes.  
+</p><p>A typical use for a static route is a static default route for systems that do not make use of DHCP or dynamic routing protocols:
+</p>
+<pre><b>set protocols static route 0.0.0.0/0 next-hop 203.0.113.1 distance '1'</b>
+</pre>
+<p>Producing the following configuration:
+</p>
+<pre>static {
+    route 0.0.0.0/0 {
+        next-hop 203.0.113.1 {
+            distance 1
+        }
+    }
+}
+</pre>
+<p>Another common use of static routes is to blackhole (drop) traffic.  In the example below, <a class="external mw-magiclink-rfc" rel="nofollow" href="http://tools.ietf.org/html/rfc1918">RFC 1918</a> private IP networks are set as blackhole routes.  This does not prevent networks within these segments from being used, since the most specific route is always used.  It does, however, prevent traffic to unknown private networks from leaving the router.  Commonly refereed to as leaking.
+</p>
+<pre><b>set protocols static route 10.0.0.0/8 blackhole distance '254'</b>
+<b>set protocols static route 172.16.0.0/12 blackhole distance '254'</b>
+<b>set protocols static route 192.168.0.0/16 blackhole distance '254'</b>
+</pre>
+<p>Resulting configuration:
+</p>
+<pre>route 10.0.0.0/8 {
+    blackhole {
+        distance 254
+    }
+}
+route 172.16.0.0/12 {
+    blackhole {
+        distance 254
+    }
+}
+route 192.168.0.0/16 {
+    blackhole {
+        distance 254
+    }
+}
+</pre>
+<p>Note that routes with a distance of 255 are effectively disabled and not installed into the kernel.
+</p>
+<h4> <span class="mw-headline" id="RIP"> RIP </span></h4>
+<p>Simple RIP configuration using 2 nodes and redistributing connected interfaces.
+</p><p>Node 1:
+</p>
+<pre><b>set interfaces loopback address 1.1.1.1/32 </b>
+<b>set protocols rip network 192.168.0.0/24</b>
+<b>set protocols rip redistribute connected</b>
+</pre>
+<p>Node 2:
+</p>
+<pre><b>set interfaces loopback address 2.2.2.2/32 </b>
+<b>set protocols rip network 192.168.0.0/24</b>
+<b>set protocols rip redistribute connected</b>
+</pre>
+<p><br>
+Resulting configuration:
+</p><p>Node 1:
+</p>
+<pre><i>rip{ </i>
+<i>    network 192.168.1.0/24 </i>
+<i>    redistribute { </i>
+<i>      connected { </i>
+<i>        } </i>
+<i>    } </i>
+<i>} </i>
+
+</pre>
+<p>Node 2:
+</p>
+<pre><i>rip{ </i>
+<i>    network 192.168.1.0/24 </i>
+<i>    redistribute { </i>
+<i>      connected { </i>
+<i>        } </i>
+<i>    } </i>
+<i>} </i>
+</pre>
+<h4> <span class="mw-headline" id="OSPF"> OSPF </span></h4>
+<p>A typical configuration using 2 nodes, redistribute loopback address and the node 1 sending the default route:
+</p><p>Node 1:
+</p>
+<pre><b>set interfaces loopback lo address 1.1.1.1/32 </b>
+<b>set protocols ospf area 0 network 192.168.0.0/24</b>
+<b>set protocols ospf default-information originate always</b>
+<b>set protocols ospf default-information originate metric 10</b>
+<b>set protocols ospf default-information originate metric-type 2</b>
+<b>set protocols ospf log-adjacency-changes</b>
+<b>set protocols ospf parameters router-id 1.1.1.1</b>
+<b>set protocols ospf redistribute connected metric-type 2</b>
+<b>set protocols ospf redistribute connected route-map CONNECT</b>
+</pre>
+<pre><b>set policy route-map CONNECT rule 10 action permit</b>
+<b>set policy route-map CONNECT rule 10 match interface lo</b>
+</pre>
+<p><br>
+Node 2:
+</p>
+<pre><b>set interfaces loopback lo address 2.2.2.2/32 </b>
+<b>set protocols ospf area 0 network 192.168.0.0/24 </b>
+<b>set protocols ospf log-adjacency-changes </b>
+<b>set protocols ospf parameters router-id 2.2.2.2 </b>
+<b>set protocols ospf redistribute connected metric-type 2 </b>
+<b>set protocols ospf redistribute connected route-map CONNECT </b>
+</pre>
+<pre><b>set policy route-map CONNECT rule 10 action permit </b>
+<b>set policy route-map CONNECT rule 10 match interface lo </b>
+</pre>
+<p><br>
+Resulting configuration:
+</p><p>Node 1:
+</p>
+<pre><i>ospf { </i>
+<i>    area 0 { </i>
+<i>         network 192.168.0.0/24 </i>
+<i>     } </i>
+<i>     default-information { </i>
+<i>         originate { </i>
+<i>             always </i>
+<i>             metric 10 </i>
+<i>             metric-type 2 </i>
+<i>         } </i>
+<i>     } </i>
+<i>     log-adjacency-changes { </i>
+<i>     } </i>
+<i>     parameters { </i>
+<i>         router-id 1.1.1.1 </i>
+<i>     } </i>
+<i>     redistribute { </i>
+<i>         connected { </i>
+<i>             metric-type 2 </i>
+<i>             route-map CONNECT </i>
+<i>         } </i>
+<i>     } </i>
+<i> }  </i>
+</pre>
+<pre><i>route-map CONNECT {</i>
+<i>    rule 10 {</i>
+<i>        action permit</i>
+<i>        match {</i>
+<i>           interface lo</i>
+<i>       }</i>
+<i>  }</i>
+<i> }</i>
+</pre>
+<p><br>
+Node 2:
+</p>
+<pre><i>ospf { </i>
+<i>    area 0 { </i>
+<i>         network 192.168.0.0/24 </i>
+<i>     } </i>
+<i>     log-adjacency-changes { </i>
+<i>     } </i>
+<i>     parameters { </i>
+<i>         router-id 2.2.2.2 </i>
+<i>     } </i>
+<i>     redistribute { </i>
+<i>         connected { </i>
+<i>             metric-type 2 </i>
+<i>             route-map CONNECT </i>
+<i>         } </i>
+<i>     } </i>
+<i> }  </i>
+</pre>
+<pre><i>route-map CONNECT {</i>
+<i>    rule 10 {</i>
+<i>        action permit</i>
+<i>        match {</i>
+<i>           interface lo</i>
+<i>       }</i>
+<i>  }</i>
+<i> }</i>
+</pre>
+<h4> <span class="mw-headline" id="BGP"> BGP </span></h4>
+<h5> <span class="mw-headline" id="IPv4"> IPv4 </span></h5>
+<p>A simple eBGP configuration:
+</p><p>Node 1:
+</p>
+<pre><b>set protocols bgp 65536 neighbor 192.168.0.2 ebgp-multihop '2' </b>
+<b>set protocols bgp 65536 neighbor 192.168.0.2 remote-as '65537' </b>
+<b>set protocols bgp 65536 neighbor 192.168.0.2 update-source ‘192.168.0.1 </b>
+<b>set protocols bgp 65536 network '1.0.0.0/16' </b>
+<b>set protocols bgp 65536 parameters router-id ‘192.168.0.1 </b>
+</pre>
+<p>Node 2:
+</p>
+<pre><b>set protocols bgp 65537 neighbor 192.168.0.1 ebgp-multihop '2' </b>
+<b>set protocols bgp 65537 neighbor 192.168.0.1 remote-as '65536’ </b>
+<b>set protocols bgp 65537 neighbor 192.168.0.1 update-source ‘192.168.0.2 </b>
+<b>set protocols bgp 65537 network 2.0.0.0/16' </b>
+<b>set protocols bgp 65537 parameters router-id ‘192.168.0.2 </b>
+</pre>
+<p><br>
+Don’t forget, the CIDR declared in the network statement <b>MUST</b> exist in your routing table (dynamic or static), the best way to make sure that is true is creating a static route:
+</p><p>Node 1:
+</p>
+<pre><b>set protocols static route 1.0.0.0/16 blackhole distance '254' </b>
+</pre>
+<p><br>
+Node 2:
+</p>
+<pre><b>set protocols static route 2.0.0.0/16 blackhole distance '254' </b>
+</pre>
+<p><br>
+Resulting configuration:
+</p><p>Node 1:
+</p>
+<pre><i>bgp 65536 { </i>
+<i>     neighbor 192.168.0.2 { </i>
+<i>         ebgp-multihop 2 </i>
+<i>         remote-as 65537 </i>
+<i>         update-source 192.168.0.1 </i>
+<i>     } </i>
+<i>     network 1.0.0.0/16 { </i>
+<i>     } </i>
+<i>     parameters { </i>
+<i>         router-id 192.168.0.1 </i>
+<i>     } </i>
+<i> } </i>
+</pre>
+<pre><i>static { </i>
+<i>     route 1.0.0.0/16 { </i>
+<i>        blackhole { </i>
+<i>           distance 254 </i>
+<i>         } </i>
+<i>     } </i>
+</pre>
+<p><br>
+</p><p>Node 2:
+</p>
+<pre><i>bgp 65537 { </i>
+<i>     neighbor 192.168.0.1 { </i>
+<i>         ebgp-multihop 2 </i>
+<i>         remote-as 65536 </i>
+<i>         update-source 192.168.0.2 </i>
+<i>     } </i>
+<i>     network 2.0.0.0/16 { </i>
+<i>     } </i>
+<i>     parameters { </i>
+<i>         router-id 192.168.0.2 </i>
+<i>     } </i>
+<i> } </i>
+</pre>
+<p><br>
+</p>
+<pre><i>static { </i>
+<i>     route 2.0.0.0/16 { </i>
+<i>        blackhole { </i>
+<i>           distance 254 </i>
+<i>         } </i>
+<i>     } </i>
+</pre>
+<h5> <span class="mw-headline" id="IPv6"> IPv6 </span></h5>
+<p>A simple BGP configuration, but over IPv6.
+</p><p>Node 1:
+</p>
+<pre><b>set protocols bgp 65536 neighbor 2a00:100::2 ebgp-multihop '2' </b>
+<b>set protocols bgp 65536 neighbor 2a00:100::2 remote-as '65537' </b>
+<b>set protocols bgp 65536 neighbor 2a00:100::2 update-source ‘2a00:100::1 </b>
+<b>set protocols bgp 65536 neighbor 2a00:100::2 address-family ipv6-unicast</b>
+<b>set protocols bgp 65536 address-family ipv6-unicast network '2a00:100:1::/48' </b>
+<b>set protocols bgp 65536 parameters router-id ‘2a00:100::1 </b>
+</pre>
+<p>Node 2:
+</p>
+<pre><b>set protocols bgp 65537 neighbor 2a00:100::1 ebgp-multihop '2' </b>
+<b>set protocols bgp 65537 neighbor 2a00:100::1 remote-as '65536’ </b>
+<b>set protocols bgp 65537 neighbor 2a00:100::1 update-source ‘2a00:100::2 </b>
+<b>set protocols bgp 65536 neighbor 2a00:100::1 address-family ipv6-unicast</b>
+<b>set protocols bgp 65537 address-family ipv6-unicast network '2a00:100:2::/48' </b>
+<b>set protocols bgp 65537 parameters router-id ‘2a00:100::2 </b>
+</pre>
+<p><br>
+Don’t forget, the CIDR declared in the network statement <b>MUST</b> exist in your routing table (dynamic or static), the best way to make sure that is true is creating a static route:
+</p><p>Node 1:
+</p>
+<pre><b>set protocols static route6 2a001:100:1::/48 blackhole distance '254' </b>
+</pre>
+<p><br>
+Node 2:
+</p>
+<pre><b>set protocols static route6 2a00:100:2::/48 blackhole distance '254' </b>
+</pre>
+<p><br>
+Resulting configuration:
+</p><p>Node 1:
+</p>
+<pre><i>bgp 65536 { </i>
+<i>     neighbor 2a00:100::2 { </i>
+<i>         address-family {</i>
+<i>             ipv6-unicast {</i>
+<i>            }</i>
+<i>         }</i>
+<i>         ebgp-multihop 2 </i>
+<i>         remote-as 65537 </i>
+<i>         update-source 2a00:100::1 </i>
+<i>     } </i>
+<i>     network 2a00:100:1::/48 { </i>
+<i>     } </i>
+<i>     parameters { </i>
+<i>         router-id 2a00:100::1 </i>
+<i>     } </i>
+<i> } </i>
+</pre>
+<pre><i>static { </i>
+<i>     route6 2a00:100:1::/48 { </i>
+<i>        blackhole { </i>
+<i>           distance 254 </i>
+<i>         } </i>
+<i>     } </i>
+</pre>
+<p><br>
+</p><p>Node 2:
+</p>
+<pre><i>bgp 65537 { </i>
+<i>     neighbor 2a00:100::1 { </i>
+<i>         address-family {</i>
+<i>             ipv6-unicast {</i>
+<i>            }</i>
+<i>         }</i>
+<i>         ebgp-multihop 2 </i>
+<i>         remote-as 65536 </i>
+<i>         update-source 2a00:100::2 </i>
+<i>     } </i>
+<i>     network 2a00:100:2::/48 { </i>
+<i>     } </i>
+<i>     parameters { </i>
+<i>         router-id 2a00:100::2 </i>
+<i>     } </i>
+<i> } </i>
+</pre>
+<p><br>
+</p>
+<pre><i>static { </i>
+<i>     route6 2a00:100:2::/48 { </i>
+<i>        blackhole { </i>
+<i>           distance 254 </i>
+<i>         } </i>
+<i>     } </i>
+</pre>
+<h5> <span class="mw-headline" id="Route-map"> Route-map </span></h5>
+<p>If you also want remote-map this is fairly simple to implement.
+</p><p>Node1:
+</p>
+<pre><b>set policy prefix-list AS65537-IN rule 10 action 'permit' </b>
+<b>set policy prefix-list AS65537-IN rule 10 prefix '2.0.0.0/16' </b>
+<b>set policy prefix-list AS65537-OUT rule 10 action 'deny' </b>
+<b>set policy prefix-list AS65537-OUT rule 10 prefix '2.0.0.0/16' </b>
+<b>set policy prefix-list6 AS65537-IN rule 10 action 'permit' </b>
+<b>set policy prefix-list6 AS65537-IN rule 10 prefix '2a00:100:2::/48' </b>
+<b>set policy prefix-list6 AS65537-OUT rule 10 action 'deny' </b>
+<b>set policy prefix-list6 AS65537-OUT rule 10 prefix '2a00:100:2::/48' </b>
+<b>set policy route-map AS65537-IN rule 10 action 'permit' </b>
+<b>set policy route-map AS65537-IN rule 10 match ip address prefix-list 'AS65537-IN' </b>
+<b>set policy route-map AS65537-IN rule 10 match ipv6 address prefix-list 'AS65537-IN' </b>
+<b>set policy route-map AS65537-IN rule 20 action 'deny' </b>
+<b>set policy route-map AS65537-OUT rule 10 action 'deny' </b>
+<b>set policy route-map AS65537-OUT rule 10 match ip address prefix-list 'AS65537-OUT' </b>
+<b>set policy route-map AS65537-OUT rule 10 match ipv6 address prefix-list 'AS65537-OUT' </b>
+<b>set policy route-map AS65537-OUT rule 20 action 'permit' </b>
+<b>set protocols bgp 65536 neighbor 2a00:100::2 route-map export 'AS65537-OUT' </b>
+<b>set protocols bgp 65536 neighbor 2a00:100::2 route-map import 'AS65537-IN' </b>
+</pre>
+<p>Node2:
+</p>
+<pre><b>set policy prefix-list AS65536-IN rule 10 action 'permit' </b>
+<b>set policy prefix-list AS65536-IN rule 10 prefix '1.0.0.0/16' </b>
+<b>set policy prefix-list AS65536-OUT rule 10 action 'deny' </b>
+<b>set policy prefix-list AS65536-OUT rule 10 prefix '1.0.0.0/16' </b>
+<b>set policy prefix-list6 AS65536-IN rule 10 action 'permit' </b>
+<b>set policy prefix-list6 AS65536-IN rule 10 prefix '2a00:100:1::/48' </b>
+<b>set policy prefix-list6 AS65536-OUT rule 10 action 'deny' </b>
+<b>set policy prefix-list6 AS65536-OUT rule 10 prefix '2a00:100:1::/48' </b>
+<b>set policy route-map AS65536-IN rule 10 action 'permit' </b>
+<b>set policy route-map AS65536-IN rule 10 match ip address prefix-list 'AS65536-IN' </b>
+<b>set policy route-map AS65536-IN rule 10 match ipv6 address prefix-list 'AS65536-IN' </b>
+<b>set policy route-map AS65536-IN rule 20 action 'deny' </b>
+<b>set policy route-map AS65536-OUT rule 10 action 'deny' </b>
+<b>set policy route-map AS65536-OUT rule 10 match ip address prefix-list 'AS65536-OUT' </b>
+<b>set policy route-map AS65536-OUT rule 10 match ipv6 address prefix-list 'AS65536-OUT' </b>
+<b>set policy route-map AS65536-OUT rule 20 action 'permit' </b>
+<b>set protocols bgp 65537 neighbor 2a00:100::1 route-map export 'AS65536-OUT' </b>
+<b>set protocols bgp 65537 neighbor 2a00:100::1 route-map import 'AS65536-IN' </b>
+</pre>
+<p>We could expand on this and also deny link local and multicast in the rule 20 action deny.
+</p>
+<h4> <span class="mw-headline" id="Route_Redistribution_and_Policy_Engine"> Route Redistribution and Policy Engine </span></h4>
+<h3> <span class="mw-headline" id="Firewall"> Firewall </span></h3>
+<p>VyOS makes use of Linux <a rel="nofollow" class="external text" href="http://netfilter.org/">netfilter</a> for packet filtering.
+</p><p>The firewall supports the creation of groups for ports, addresses, and networks (implemented using netfilter ipset) and the option of interface or zone based firewall policy.
+</p><p><b>Important note on usage of terms:</b> The firewall makes use of the terms <code>in</code>, <code>out</code>, and <code>local</code> for firewall policy. Users experienced with netfilter often confuse <code>in</code> to be a reference to the <code>INPUT</code> chain, and <code>out</code> the <code>OUTPUT</code> chain from netfilter.  This is not the case.  These instead indicate the use of the <code>FORWARD</code> chain and either the input or output interface.  The <code>INPUT</code> chain, which is used for local traffic to the OS, is a reference to as <code>local</code> with respect to its input interface.
+</p>
+<h4> <span class="mw-headline" id="Groups"> Groups </span></h4>
+<p>Firewall groups represent collections of IP addresses, networks, or ports.  Once created, a group can be referenced by firewall rules as either a source or destination.  Members can be added or removed from a group without changes to or the need to reload individual firewall rules.  Note that groups can also be referenced by NAT configuration.
+</p><p>While network groups accept IP networks in CIDR notation, specific IP addresses can be added as a 32-bit prefix.  If you foresee the need to add a mix of addresses and networks, the network group is recommended.
+</p><p>Here is an example of a network group for the IP networks that make up the internal network:
+</p>
+<pre><b>set firewall group network-group NET-INSIDE network 192.168.0.0/24</b>
+<b>set firewall group network-group NET-INSIDE network 192.168.1.0/24</b>
+</pre>
+<p>A port group represents only port numbers, not the protocol.  Port groups can be referenced for either TCP or UDP.  It is recommended that TCP and UDP groups are created separately to avoid accidentally filtering unnecessary ports.  Ranges of ports can be specified by using a <code>-</code>.
+</p><p>Here is an example of a port group a server:
+</p>
+<pre><b>set firewall group port-group PORT-TCP-SERVER1 port 80</b>
+<b>set firewall group port-group PORT-TCP-SERVER1 port 443</b>
+<b>set firewall group port-group PORT-TCP-SERVER1 port 5000-5010</b>
+</pre>
+<p><br>
+</p>
+<h4> <span class="mw-headline" id="Rule-Sets"> Rule-Sets </span></h4>
+<p>A rule-set is a named collection of firewall rules that can be applied to an interface or zone.  Each rule is numbered, has an action to apply if the rule is matched, and the ability to specify the criteria to match.
+</p><p>Example of a rule-set to filter traffic to the internal network:
+</p>
+<pre><b>set firewall name INSIDE-OUT default-action drop</b>
+<b>set firewall name INSIDE-OUT rule 1010 action accept</b>
+<b>set firewall name INSIDE-OUT rule 1010 state established enable</b>
+<b>set firewall name INSIDE-OUT rule 1010 state related enable</b>
+<b>set firewall name INSIDE-OUT rule 1020 action drop</b>
+<b>set firewall name INSIDE-OUT rule 1020 state invalid enable</b>
+</pre>
+<p><br>
+</p>
+<h4> <span class="mw-headline" id="Applying_a_Rule-Set_to_an_Interface"> Applying a Rule-Set to an Interface </span></h4>
+<p>Once a rule-set is created, it can be applied to an interface.  Note only one rule-set can be applied to each interface for <code>in</code>, <code>out</code>, or <code>local</code> traffic for each protocol (IPv4 and IPv6).
+</p>
+<pre><b>set interfaces ethernet eth1 firewall out name INSIDE-OUT</b>
+</pre>
+<p><br>
+</p>
+<h4> <span class="mw-headline" id="Applying_a_Rule-Set_to_a_Zone"> Applying a Rule-Set to a Zone </span></h4>
+<p>A named rule-set can also be applied to a zone relationship (note, zones must first be created):
+</p>
+<pre><b>set zone-policy zone INSIDE from OUTSIDE firewall name INSIDE-OUT</b>
+</pre>
+<p><br>
+</p>
+<h4> <span class="mw-headline" id="Zone-based_Firewall_Policy"> Zone-based Firewall Policy </span></h4>
+<p>As an alternative to applying policy to an interface directly, a zone-based firewall can be created to simplify configuration when multiple interfaces belong to the same security zone.
+</p>
+<h3> <span class="mw-headline" id="NAT"> NAT </span></h3>
+<h4> <span class="mw-headline" id="Source_NAT"> Source NAT  </span></h4>
+<p>Source NAT is typically referred to simply as NAT.  To be more correct, what most people refer to as NAT is actually the process of <b>Port Address Translation (PAT)</b>, or <b>NAT Overload</b>: The process of having many internal host systems communicate to the Internet using a single or subset of IP addresses.
+</p><p>To setup SNAT, we need to know:
+</p>
+<ul><li> The internal IP addresses we want to translate
+</li><li> The outgoing interface to perform the translation on
+</li><li> The external IP address to translate to
+</li></ul>
+<p>In the example used for the Quick Start configuration above, we demonstrate the following configuration:
+</p>
+<pre><b>set nat source rule 100 outbound-interface 'eth0'</b>
+<b>set nat source rule 100 source address '192.168.0.0/24'</b>
+<b>set nat source rule 100 translation address 'masquerade'</b>
+</pre>
+<p>Which generates the following configuration:
+</p>
+<pre>rule 100 {
+    outbound-interface eth0
+    source {
+        address 192.168.0.0/24
+    }
+    translation {
+        address masquerade
+    }
+}
+</pre>
+<p>In this example, we use <b>masquerade</b> as the translation address instead of an IP address.  The <b>masquerade</b> target is effectively an alias to say "use whatever IP address is on the outgoing interface", rather than a statically configured IP address.  This is useful if you use DHCP for your outgoing interface and do not know what the external address will be.
+</p><p>When using NAT for a large number of host systems it recommended that a minimum of 1 IP address is used to NAT every 256 host systems.  This is due to the limit of 65,000 port numbers available for unique translations and a reserving an average of 200-300 sessions per host system.
+</p><p>Example: For an ~ 8,000 host network a source NAT pool of 32 IP addresses is recommended.
+</p><p>A pool of addresses can be defined by using a <b>-</b> in the <b>set nat source rule [n] translation address</b> statement.
+</p>
+<pre><b>set nat source rule 100 translation address '203.0.113.32-203.0.113.63'</b>
+</pre>
+<p><br>
+</p>
+<hr>
+<p><b>Note:</b> Avoiding NAT breakage in the absence of split-DNS
+</p><p>A typical problem with using NAT and hosting public servers is the ability for internal systems to reach an internal server using it's external IP address.  The solution to this is usually the use of split-DNS to correctly point host systems to the internal address when requests are made internally.  Because many smaller networks lack DNS infrastructure, a work-around is commonly deployed to facilitate the traffic by NATing the request from internal hosts to the source address of the internal interface on the firewall.  This technique is commonly reffered to as <b>NAT Reflection</b>, or <b>Hairpin NAT</b>.
+</p><p>In this example, we will be using the example Quick Start configuration above as a starting point.
+</p><p>To setup a NAT reflection rule, we need to create a rule to NAT connections from the internal network to the same internal network to use the source address of the internal interface.
+</p>
+<pre><b>set nat source rule 110 description 'NAT Reflection: INSIDE'</b>
+<b>set nat source rule 110 destination address '192.168.0.0/24'</b>
+<b>set nat source rule 110 outbound-interface 'eth1'</b>
+<b>set nat source rule 110 source address '192.168.0.0/24'</b>
+<b>set nat source rule 110 translation address 'masquerade'</b>
+</pre>
+<p>Which results in a configuration of:
+</p>
+<pre>rule 110 {
+    description "NAT Reflection: INSIDE"
+    destination {
+        address 192.168.0.0/24
+    }
+    outbound-interface eth1
+    source {
+        address 192.168.0.0/24
+    }
+    translation {
+        address masquerade
+    }
+}
+</pre>
+<hr>
+<h4> <span class="mw-headline" id="Destination_NAT"> Destination NAT </span></h4>
+<p>DNAT is typically referred to as a <b>Port Forward</b>.  When using VyOS as a NAT router and firewall, a common configuration task is to redirect incoming traffic to a system behind the firewall.
+</p><p>In this example, we will be using the example Quick Start configuration above as a starting point.
+</p><p>To setup a destination NAT rule we need to gather:
+</p>
+<ul><li> The interface traffic will be coming in on
+</li><li> The protocol and port we wish to forward
+</li><li> The IP address of the internal system we wish to forward traffic to
+</li></ul>
+<p>In our example, we will be forwarding web server traffic to an internal web server on 192.168.0.100.
+</p><p>HTTP traffic makes use of the TCP protocol on port 80.
+</p><p>For other common port numbers, see: <a rel="nofollow" class="external autonumber" href="http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers">[1]</a>
+</p><p>Our configuration commands would be:
+</p>
+<pre><b>set nat destination rule 10 description 'Port Forward: HTTP to 192.168.0.100'</b>
+<b>set nat destination rule 10 destination port '80'</b>
+<b>set nat destination rule 10 inbound-interface 'eth0'</b>
+<b>set nat destination rule 10 protocol 'tcp'</b>
+<b>set nat destination rule 10 translation address '192.168.0.100'</b>
+</pre>
+<p>Which would generate the following NAT destination configuration:
+</p>
+<pre>nat {
+    destination {
+        rule 10 {
+            description "Port Forward: HTTP to 192.168.0.100"
+            destination {
+                port 80
+            }
+            inbound-interface eth0
+            protocol tcp
+            translation {
+                address 192.168.0.100
+            }
+        }
+    }
+}
+</pre>
+<p>Note that if forwarding traffic to a different port than it is arriving on, you may also configure the translation port using <b>set nat destination rule [n] translation port</b>.
+</p><p>This establishes our Port Forward rule, but if we created a firewall policy it will likely block the traffic.
+</p><p>It is important to note that when creating firewall rules that the DNAT translation occurs <i>before</i> traffic traverses the firewall.  In other words, the destination address has already been translated to 192.168.0.100.
+</p><p>So in our firewall policy, we want to allow traffic coming in on the outside interface, destined for TCP port 80 and the IP address of 192.168.0.100.
+</p>
+<pre><b>set firewall name OUTSIDE-IN rule 20 action 'accept'</b>
+<b>set firewall name OUTSIDE-IN rule 20 destination address '192.168.0.100'</b>
+<b>set firewall name OUTSIDE-IN rule 20 destination port '80'</b>
+<b>set firewall name OUTSIDE-IN rule 20 protocol 'tcp'</b>
+<b>set firewall name OUTSIDE-IN rule 20 state new 'enable'</b>
+</pre>
+<p>This would generate the following configuration:
+</p>
+<pre>rule 20 {
+    action accept
+    destination {
+        address 192.168.0.100
+        port 80
+    }
+    protocol tcp
+    state {
+        new enable
+    }
+}
+</pre>
+<h4> <span class="mw-headline" id="1-to-1_NAT"> 1-to-1 NAT </span></h4>
+<p>Another term often used for DNAT is <b>1-to-1 NAT</b>.
+</p><p>For a 1-to-1 NAT configuration, both DNAT and SNAT are used to NAT all traffic from an external IP address to an internal IP address and vice-versa.
+</p><p>Typically, a 1-to-1 NAT rule omits the destination port (all ports) and replaces the protocol with either <b>all</b> or <b>ip</b>.
+</p><p>Then a corresponding SNAT rule is created to NAT outgoing traffic for the internal IP to a reserved external IP.  This dedicates an external IP address to an internal IP address and is useful for protocols which don't have the notion of ports, such as GRE.
+</p>
+<h5> <span class="mw-headline" id="1-to-1_NAT_example"> 1-to-1 NAT example </span></h5>
+<p>Here's an extract of a simple 1-to-1 NAT configuration with one internal and one external interface:
+</p>
+<pre><b>set interfaces ethernet eth0 address '192.168.1.1/24'</b>
+<b>set interfaces ethernet eth0 description 'Inside interface'</b>
+<b>set interfaces ethernet eth1 address '1.2.3.4/24'</b>
+<b>set interfaces ethernet eth1 description 'Outside interface'</b>
+<b>set nat destination rule 2000 description '1-to-1 NAT example'</b>
+<b>set nat destination rule 2000 destination address '1.2.3.4'</b>
+<b>set nat destination rule 2000 inbound-interface 'eth1'</b>
+<b>set nat destination rule 2000 translation address '192.168.1.10'</b>
+<b>set nat source rule 2000 description '1-to-1 NAT example'</b>
+<b>set nat source rule 2000 outbound-interface 'eth1'</b>
+<b>set nat source rule 2000 source address '192.168.1.10'</b>
+<b>set nat source rule 2000 translation address '1.2.3.4'</b>
+</pre>
+<p>Firewall rules are written as normal, using the internal IP address as the source of outbound rules and the destination of inbound rules.
+</p><p><br>
+</p>
+<h4> <span class="mw-headline" id="NPTv6_.28RFC6296.29"> NPTv6 (RFC6296) </span></h4>
+<p>See here&nbsp;: <a href="http://vyos.net/wiki/How_to_do_NPTv6" title="How to do NPTv6">How_to_do_NPTv6</a>
+</p>
+<h3> <span class="mw-headline" id="VPN"> VPN </span></h3>
+<p>Example for configuring a simple L2TP over IPsec VPN for remote access (works with native Windows and Mac VPN clients):
+</p>
+<pre><b>set vpn ipsec ipsec-interfaces interface eth0</b>
+<b>set vpn ipsec nat-traversal enable</b>
+<b>set vpn ipsec nat-networks allowed-network 0.0.0.0/0</b>
+
+<b>set vpn l2tp remote-access outside-address 203.0.113.2</b>
+<b>set vpn l2tp remote-access client-ip-pool start 192.168.255.1</b>
+<b>set vpn l2tp remote-access client-ip-pool stop 192.168.255.255</b>
+<b>set vpn l2tp remote-access ipsec-settings authentication mode pre-shared-secret</b>
+<b>set vpn l2tp remote-access ipsec-settings authentication pre-shared-secret &lt;secret&gt;</b>
+<b>set vpn l2tp remote-access authentication mode local</b>
+<b>set vpn l2tp remote-access authentication local-users username &lt;username&gt; password &lt;password&gt;</b>
+</pre>
+<p>In the example above an external IP of 203.0.113.2 is assumed.
+</p><p>If a local firewall policy is in place on your external interface you will need to open:
+</p>
+<ul><li> UDP port 500 (IKE)
+</li><li> IP protocol number 50 (ESP)
+</li><li> UDP port 1701 for IPsec
+</li></ul>
+<p>In addition when NAT is detected by the VPN client ESP is encapsulated in UDP for NAT-traversal:
+</p>
+<ul><li> UDP port 4500 (NAT-T)
+</li></ul>
+<p>Example:
+</p>
+<pre><b>set firewall name OUTSIDE-LOCAL rule 40 action 'accept'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 40 protocol 'esp'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 41 action 'accept'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 41 destination port '500'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 41 protocol 'udp'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 42 action 'accept'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 42 destination port '4500'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 42 protocol 'udp'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 43 action 'accept'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 43 destination port '1701'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 43 ipsec 'match-ipsec'</b>
+<b>set firewall name OUTSIDE-LOCAL rule 43 protocol 'udp'</b>
+</pre>
+<p>Also note that if you wish to allow the VPN to be used for external access you will need to add the appropriate source NAT rules to your configuration.
+</p>
+<pre><b>set nat source rule 110 outbound-interface 'eth0'</b>
+<b>set nat source rule 110 source address '192.168.255.0/24'</b>
+<b>set nat source rule 110 translation address masquerade</b>
+</pre>
+<p>Established sessions can be viewed using the <b>show vpn remote-access</b> operational command.
+</p>
+<pre>vyos@vyos:~$ <b>show vpn remote-access</b>
+Active remote access VPN sessions:
+User            Proto Iface     Tunnel IP       TX byte RX byte  Time 
+----            ----- -----     ---------       ------- -------  ---- 
+vyos            L2TP  l2tp0     192.168.255.1      3.2K    8.0K  00h06m13s
+</pre>
+<h3> <span class="mw-headline" id="Traffic_Policy"> Traffic Policy </span></h3>
+<p>The traffic policy subsystem provides an interface to Linux traffic control.
+</p><p>One common use of traffic policy is to limit bandwidth for an interface.  In the example below we limit bandwidth for our LAN connection to 200M download and out WAN connection to 50M upload:
+</p>
+<pre><b>set traffic-policy shaper WAN-OUT bandwidth '50Mbit'</b>
+<b>set traffic-policy shaper WAN-OUT default bandwidth '50%'</b>
+<b>set traffic-policy shaper WAN-OUT default ceiling '100%'</b>
+<b>set traffic-policy shaper WAN-OUT default queue-type 'fair-queue'</b>
+
+<b>set traffic-policy shaper LAN-OUT bandwidth '200Mbit'</b>
+<b>set traffic-policy shaper LAN-OUT default bandwidth '50%'</b>
+<b>set traffic-policy shaper LAN-OUT default ceiling '100%'</b>
+<b>set traffic-policy shaper LAN-OUT default queue-type 'fair-queue'</b>
+</pre>
+<p>Resulting in the following configuration:
+</p>
+<pre>traffic-policy {
+    shaper WAN-OUT {
+        bandwidth 50Mbit
+        default {
+            bandwidth 50%
+            ceiling 100%
+            queue-type fair-queue
+        }
+    }
+    shaper LAN-OUT {
+        bandwidth 200Mbit
+        default {
+            bandwidth 50%
+            ceiling 100%
+            queue-type fair-queue
+        }
+    }
+}
+</pre>
+<p>Once defined, a traffic policy can be applied to each interface using the interface-level <b>traffic-policy</b> directive:
+</p>
+<pre><b>set interfaces ethernet eth0 traffic-policy out 'WAN-OUT'</b>
+<b>set interfaces ethernet eth1 traffic-policy out 'LAN-OUT'</b>
+</pre>
+<p>Note that a traffic policy can also be defined to match specific traffic flows using class statements.
+</p><p>VyOS also supports HFSC (included in <a href="http://vyos.net/wiki/Lithium" title="Lithium">Lithium</a>).
+</p>
+<pre><b>set traffic-policy shaper-hfsc</b>
+</pre>
+<p>See further information on the <a href="http://vyos.net/wiki/QoS" title="QoS">QoS</a> page.
+</p>
+<h3> <span class="mw-headline" id="DHCP_Server"> DHCP Server </span></h3>
+<h3> <span class="mw-headline" id="DHCP_Relay"> DHCP Relay </span></h3>
+<p>Configure a DHCP relay in eth0 with the DHCP server 192.168.10.1 (attached to eth1):
+</p>
+<pre>set service dhcp‐relay interface eth0 
+set service dhcp-relay interface eth1
+set service dhcp‐relay server 192.168.10.1
+</pre>
+<p>Currently dhcp-relay requires also specifying the interface the DHCP server replies come from.  An upstream bug exists for this: <a rel="nofollow" class="external free" href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=648401">https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=648401</a>
+</p>
+<h3> <span class="mw-headline" id="DNS_Forwarder"> DNS Forwarder </span></h3>
+<h3> <span class="mw-headline" id="Dynamic_DNS_Updater"> Dynamic DNS Updater </span></h3>
+<pre><b>set services dns dynamic interface eth0</b>
+</pre>
+<p>More information here&nbsp;: <a href="http://vyos.net/wiki/Dynamic_DNS" title="Dynamic DNS">Dynamic_DNS</a>
+</p>
+<h3> <span class="mw-headline" id="System_Configuration"> System Configuration </span></h3>
+<h4> <span class="mw-headline" id="System_Users"> System Users </span></h4>
+<p>VyOS supports two levels of users: admin and operator.
+</p><p>The operator level restricts a user to operational commands and prevents changes to system configuration.  This is useful for gathering information about the state of the system (dhcp leases, vpn connections, routing tables, etc...) and for manipulating state of the system, such as resetting connections, clearing counters and bringing up and taking down connection oriented interfaces.
+</p><p>The admin level has all of the capabilities of the operator level, plus the ability to change system configuration.  The admin level also enables a user to use the sudo command, which essentially means the user has root access to the system.
+</p>
+<h5> <span class="mw-headline" id="Creating_Login_User_Accounts"> Creating Login User Accounts </span></h5>
+<p>Create user account jsmith, with admin level access and the password "mypassword"
+</p>
+<pre>set system login user jsmith full-name "Johan Smith"
+set system login user jsmith authentication plaintext-password mypassword
+set system login user jsmith level admin
+commit
+</pre>
+<p>The command:
+</p>
+<pre>show system login
+</pre>
+<p>will show the contents of the <b>system login</b> configuration node: 
+</p>
+<pre>user jsmith {
+    authentication {
+        encrypted-password $6$0OQHjuQ8M$AYXVn7jufdfqPrSk4/XXsDBw99JBtNsETkQKDgVLptXogHA2bU9BWlvViOFPBoFxIi.iqjqrvsQdQ./cfiiPT.
+        plaintext-password ""
+    }
+    full-name "Johan Smith"
+    level admin
+}
+</pre>
+<h5> <span class="mw-headline" id="Configuring_for_SSH_Access_using_Shared_Public_Keys"> Configuring for SSH Access using Shared Public Keys </span></h5>
+<p>The following command will load the public key dev.pub for user jsmith
+</p>
+<pre>loadkey jsmith dev.pub
+</pre>
+<p><b>Note:</b> this requires uploading the dev.pub public key to the vyos firewall first. As an alternative you can also load the ssh public key directly from a remote system:
+</p>
+<pre>loadkey jsmith scp://devuser@dev001.vyos.net/home/devuser/.ssh/dev.pub
+</pre>
+<h2> <span class="mw-headline" id="System_Image_Management"> System Image Management </span></h2>
+<p>The VyOS image-based installation is implemented by creating a directory for each image on the storage device selected during the install process.
+</p><p>The directory structure of the boot device:
+</p>
+<pre> /
+ /boot
+ /boot/grub
+ /boot/VyOS_999.hydrogen.11291501
+</pre>
+<p>The image directory contains the system kernel, a compressed image of the root filesystem for the OS, and a directory for persistent storage, such as configuration.
+</p><p>On boot, the system will extract the OS image into memory and mount the appropriate live-rw sub-directories to provide persistent storage system configuration.
+</p><p>This process allows for a system to always boot to a known working state, as the OS image is fixed and non-persistent.  It also allows for multiple releases of VyOS to be installed on the same storage device.
+</p><p>The image can be selected manually at boot if needed, but the system will otherwise boot the image configured to be the default.
+</p><p>The default boot image can be set using the <b>set system image default-boot</b> command in operational mode.
+</p><p>A list of available images can be shown using the <b>show system image</b> command in operational mode.
+</p>
+<pre>vyos@vyos:~$ <b>show system image</b> 
+The system currently has the following image(s) installed:
+
+   1: 999.hydrogen.12130649 (default boot) (running image)
+   2: 999.hydrogen.12100644
+
+vyos@vyos:~$ 
+</pre>
+<p>Images no longer needed can be removed using the <b>delete system image</b> command.
+</p><p>Finally, new system images can be added using the <b>add system image</b> command.  The add image command will extract the image from the release ISO (either on the local filesystem or remotely if a URL is provided).  The image install process will prompt you to use the current system configuration and SSH security keys, allowing for the new image to boot using the current configuration.  
+</p><p>Note that configuration is associated to each image, and each image has a unique copy of its configuration.  This is different than a traditional network router where the configuration is shared across all images.
+</p><p>If you need some files from a previous images - take a look inside a /live directory.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 182/1000000
+Preprocessor generated node count: 244/1000000
+Post‐expand include size: 135/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key vyos_mw:pcache:idhash:61-0!*!0!!en!*!* and timestamp 20150526031930 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "<a href="http://vyos.net/index.php?title=User_Guide&oldid=743">http://vyos.net/index.php?title=User_Guide&amp;oldid=743</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://vyos.net/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://vyos.net/wiki/Category:User_documentation" title="Category:User documentation">User documentation</a></li></ul></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<!-- header -->
+			<div id="mw-head">
+				
+<!-- 0 -->
+<div id="p-personal" role="navigation" class="">
+	<h3>Personal tools</h3>
+	<ul>
+<li id="pt-createaccount"><a href="http://vyos.net/index.php?title=Special:UserLogin&returnto=User+Guide&type=signup">Create account</a></li><li id="pt-login"><a href="http://vyos.net/index.php?title=Special:UserLogin&returnto=User+Guide" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+
+<!-- /0 -->
+				<div id="left-navigation">
+					
+<!-- 0 -->
+<div id="p-namespaces" role="navigation" class="vectorTabs">
+	<h3>Namespaces</h3>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="./User Guide - VyOS_files/User Guide - VyOS.html" title="View the content page [alt-shift-c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="http://vyos.net/index.php?title=Talk:User_Guide&action=edit&redlink=1" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3><span>Variants</span><a href="http://vyos.net/wiki/User_Guide#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+				</div>
+				<div id="right-navigation">
+					
+<!-- 0 -->
+<div id="p-views" role="navigation" class="vectorTabs">
+	<h3>Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="./User Guide - VyOS_files/User Guide - VyOS.html">Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="http://vyos.net/index.php?title=User_Guide&action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://vyos.net/index.php?title=User_Guide&action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet">
+	<h3><span>Actions</span><a href="http://vyos.net/wiki/User_Guide#"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="http://vyos.net/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input name="search" title="Search VyOS [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off" placeholder="Search">						<button type="submit" name="button" title="Search the pages for this text" id="searchButton"><img src="./User Guide - VyOS_files/search-ltr.png" alt="Search" width="12" height="13"></button>								<input type="hidden" name="title" value="Special:Search">
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- panel -->
+			<div id="mw-panel" class="collapsible-nav">
+				<!-- logo -->
+					<div id="p-logo" role="banner"><a style="background-image: url(/skins/common/images/vy.png);" href="http://vyos.net/wiki/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal first persistent" role="navigation" id="p-navigation">
+	<h3>Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage-description"><a href="http://vyos.net/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+			<li id="n-portal"><a href="http://vyos.net/wiki/VyOS:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+			<li id="n-currentevents"><a href="http://vyos.net/wiki/VyOS:Current_events" title="Find background information on current events">Current events</a></li>
+			<li id="n-recentchanges"><a href="http://vyos.net/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+			<li id="n-randompage"><a href="http://vyos.net/wiki/Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>
+			<li id="n-help"><a href="http://vyos.net/wiki/Help:Contents" title="The place to find out">Help</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal expanded" role="navigation" id="p-tb">
+	<h3 tabindex="2"><a href="http://vyos.net/wiki/User_Guide#">Toolbox</a></h3>
+	<div class="body" style="display: block;">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://vyos.net/wiki/Special:WhatLinksHere/User_Guide" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://vyos.net/wiki/Special:RecentChangesLinked/User_Guide" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="http://vyos.net/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="http://vyos.net/index.php?title=User_Guide&printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="http://vyos.net/index.php?title=User_Guide&oldid=743" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="http://vyos.net/index.php?title=User_Guide&action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+			<!-- /panel -->
+		</div>
+		<!-- footer -->
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 2 April 2015, at 01:59.</li>
+											<li id="footer-info-viewcount">This page has been accessed 137,080 times.</li>
+											<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a>.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://vyos.net/wiki/VyOS:Privacy_policy" title="VyOS:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://vyos.net/wiki/VyOS:About" title="VyOS:About">About VyOS</a></li>
+											<li id="footer-places-disclaimer"><a href="http://vyos.net/wiki/VyOS:General_disclaimer" title="VyOS:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://www.gnu.org/copyleft/fdl.html"><img src="./User Guide - VyOS_files/gnu-fdl.png" alt="GNU Free Documentation License 1.3 or later" width="88" height="31"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="./User Guide - VyOS_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","skins.vector.js"], null, true);
+}</script>
+<script>if(window.mw){
+mw.loader.state({"site":"ready"});
+}</script>
+<!-- Served in 0.082 secs. -->
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
